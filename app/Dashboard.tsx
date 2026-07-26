@@ -260,7 +260,7 @@ type LiveSnapshot = {
   >;
 };
 
-const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights", "Credits"] as const;
+const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights"] as const;
 type Tab = (typeof tabs)[number];
 type RaceFilter = "12" | "32";
 type RangeFilter = "all" | string;
@@ -967,7 +967,7 @@ function SpotlightList({
 
 function CreditsPanel({ sourceTimestamp }: { sourceTimestamp: string }) {
   return (
-    <section className="panel wide credits-panel">
+    <section className="panel wide credits-panel" id="credits">
       <div className="panel-head">
         <div>
           <p className="eyebrow">Credits</p>
@@ -1094,6 +1094,10 @@ function DashboardLoaded({ data }: { data: DashboardData }) {
         <a href="#records">
           <img alt="" src="/statistics.svg" />
           Records
+        </a>
+        <a href="#credits">
+          <img alt="" src="/csv.svg" />
+          Credits
         </a>
       </nav>
 
@@ -1453,7 +1457,7 @@ function DashboardLoaded({ data }: { data: DashboardData }) {
         </section>
       )}
 
-      {activeTab === "Credits" && <CreditsPanel sourceTimestamp={data.meta.sourceTimestamp} />}
+      <CreditsPanel sourceTimestamp={data.meta.sourceTimestamp} />
 
       <footer>
         Data snapshot from MKW Lounge: {data.meta.sourceTimestamp}. Rank-one history uses exported event MMR updates
@@ -1480,6 +1484,10 @@ function LoadingDashboard() {
         <a href="#records">
           <img alt="" src="/statistics.svg" />
           Records
+        </a>
+        <a href="#credits">
+          <img alt="" src="/csv.svg" />
+          Credits
         </a>
       </nav>
       <section className="hero-section">

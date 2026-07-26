@@ -403,7 +403,7 @@ h3 {
 
 .tabs {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .tabs button {
@@ -1012,6 +1012,10 @@ td small {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+}
+
+.credits-panel {
+  scroll-margin-top: 126px;
 }
 
 .credits-grid article {
