@@ -61,6 +61,7 @@
           "to": "Jun 13, 2026",
           "returnScore": 123,
           "returnDelta": -507,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=115436&ladder_id=19",
           "events": 28,
           "ladderId": 19,
           "trackType": "rt"
@@ -5557,6 +5558,390 @@
           "name": "kevin",
           "value": 3387,
           "currentMmr": 10547
+        },
+        {
+          "id": "557",
+          "name": "Clement",
+          "value": 3360,
+          "currentMmr": 5964
+        },
+        {
+          "id": "1435",
+          "name": "prime nswish",
+          "value": 3349,
+          "currentMmr": 7671
+        },
+        {
+          "id": "5460",
+          "name": "1000pre",
+          "value": 3343,
+          "currentMmr": 7589
+        },
+        {
+          "id": "556",
+          "name": "pam2024mode",
+          "value": 3291,
+          "currentMmr": 11959
+        },
+        {
+          "id": "3601",
+          "name": "denia",
+          "value": 3257,
+          "currentMmr": 8787
+        },
+        {
+          "id": "1773",
+          "name": "DaBaby",
+          "value": 3233,
+          "currentMmr": 5252
+        },
+        {
+          "id": "170",
+          "name": "anti",
+          "value": 3204,
+          "currentMmr": 1798
+        },
+        {
+          "id": "2539",
+          "name": "Prin",
+          "value": 3138,
+          "currentMmr": 9728
+        },
+        {
+          "id": "732",
+          "name": "Death Spear",
+          "value": 3125,
+          "currentMmr": 3768
+        },
+        {
+          "id": "4154",
+          "name": "KMNZ",
+          "value": 3070,
+          "currentMmr": 8567
+        },
+        {
+          "id": "611",
+          "name": "Cormac",
+          "value": 2971,
+          "currentMmr": 9699
+        },
+        {
+          "id": "537",
+          "name": "Latency",
+          "value": 2919,
+          "currentMmr": 3634
+        },
+        {
+          "id": "1519",
+          "name": "josh",
+          "value": 2901,
+          "currentMmr": 8074
+        },
+        {
+          "id": "597",
+          "name": "Syfal",
+          "value": 2885,
+          "currentMmr": -1744
+        },
+        {
+          "id": "1886",
+          "name": "Lonie",
+          "value": 2878,
+          "currentMmr": 8053
+        },
+        {
+          "id": "2468",
+          "name": "Nuke",
+          "value": 2799,
+          "currentMmr": 8620
+        },
+        {
+          "id": "1024",
+          "name": "deez",
+          "value": 2760,
+          "currentMmr": 6262
+        },
+        {
+          "id": "2104",
+          "name": "may is Ready2Win",
+          "value": 2691,
+          "currentMmr": 4271
+        },
+        {
+          "id": "365",
+          "name": "GILFAR",
+          "value": 2683,
+          "currentMmr": 5993
+        },
+        {
+          "id": "2626",
+          "name": "Razz",
+          "value": 2664,
+          "currentMmr": 5606
+        },
+        {
+          "id": "4676",
+          "name": "vob",
+          "value": 2630,
+          "currentMmr": 4272
+        },
+        {
+          "id": "1614",
+          "name": "Kasperinos",
+          "value": 2625,
+          "currentMmr": 14179
+        },
+        {
+          "id": "264",
+          "name": "Azn",
+          "value": 2600,
+          "currentMmr": 9256
+        },
+        {
+          "id": "3033",
+          "name": "restricted bot",
+          "value": 2598,
+          "currentMmr": 3938
+        },
+        {
+          "id": "2658",
+          "name": "Sazantos",
+          "value": 2566,
+          "currentMmr": 6713
+        },
+        {
+          "id": "3246",
+          "name": "Toddy",
+          "value": 2525,
+          "currentMmr": 8396
+        },
+        {
+          "id": "1948",
+          "name": "Lxddz",
+          "value": 2507,
+          "currentMmr": 7642
+        },
+        {
+          "id": "921",
+          "name": "epicdevil",
+          "value": 2440,
+          "currentMmr": 3189
+        },
+        {
+          "id": "2287",
+          "name": "negima",
+          "value": 2439,
+          "currentMmr": 5852
+        },
+        {
+          "id": "4675",
+          "name": "Pink Dinosaur",
+          "value": 2430,
+          "currentMmr": 5078
+        },
+        {
+          "id": "2562",
+          "name": "py",
+          "value": 2418,
+          "currentMmr": 13254
+        },
+        {
+          "id": "3741",
+          "name": "Moroha",
+          "value": 2403,
+          "currentMmr": 10639
+        },
+        {
+          "id": "1727",
+          "name": "Fatalis",
+          "value": 2379,
+          "currentMmr": 4331
+        },
+        {
+          "id": "3632",
+          "name": "Zoan",
+          "value": 2376,
+          "currentMmr": 6498
+        },
+        {
+          "id": "18",
+          "name": "djed spence",
+          "value": 2374,
+          "currentMmr": 9112
+        },
+        {
+          "id": "4992",
+          "name": "Tribal Chief",
+          "value": 2365,
+          "currentMmr": 4324
+        },
+        {
+          "id": "2154",
+          "name": "minoru",
+          "value": 2348,
+          "currentMmr": 5127
+        },
+        {
+          "id": "2819",
+          "name": "Punch",
+          "value": 2338,
+          "currentMmr": 5252
+        },
+        {
+          "id": "3136",
+          "name": "swofg",
+          "value": 2333,
+          "currentMmr": 8136
+        },
+        {
+          "id": "1183",
+          "name": "Sh",
+          "value": 2321,
+          "currentMmr": 6597
+        },
+        {
+          "id": "683",
+          "name": "DanUK",
+          "value": 2305,
+          "currentMmr": 6841
+        },
+        {
+          "id": "1660",
+          "name": "Millwall",
+          "value": 2298,
+          "currentMmr": 3791
+        },
+        {
+          "id": "4301",
+          "name": "by",
+          "value": 2263,
+          "currentMmr": 11302
+        },
+        {
+          "id": "4996",
+          "name": "pttmxrx",
+          "value": 2247,
+          "currentMmr": 8486
+        },
+        {
+          "id": "2798",
+          "name": "purity peptides",
+          "value": 2216,
+          "currentMmr": 9065
+        },
+        {
+          "id": "1283",
+          "name": "Aokiji",
+          "value": 2200,
+          "currentMmr": 4256
+        },
+        {
+          "id": "3388",
+          "name": "vini",
+          "value": 2192,
+          "currentMmr": 3930
+        },
+        {
+          "id": "1747",
+          "name": "rin satsuki eosd",
+          "value": 2175,
+          "currentMmr": 4833
+        },
+        {
+          "id": "3155",
+          "name": "Tank",
+          "value": 2172,
+          "currentMmr": 3629
+        },
+        {
+          "id": "4335",
+          "name": "aubaw",
+          "value": 2158,
+          "currentMmr": 6103
+        },
+        {
+          "id": "975",
+          "name": "Fahmi",
+          "value": 2152,
+          "currentMmr": 5571
+        },
+        {
+          "id": "1699",
+          "name": "kloshi",
+          "value": 2151,
+          "currentMmr": 3589
+        },
+        {
+          "id": "2867",
+          "name": "Sgt",
+          "value": 2150,
+          "currentMmr": 7585
+        },
+        {
+          "id": "1061",
+          "name": "Black",
+          "value": 2138,
+          "currentMmr": 12109
+        },
+        {
+          "id": "3011",
+          "name": "space",
+          "value": 2107,
+          "currentMmr": 7485
+        },
+        {
+          "id": "983",
+          "name": "Fatal",
+          "value": 2093,
+          "currentMmr": 9985
+        },
+        {
+          "id": "2432",
+          "name": "nan",
+          "value": 2091,
+          "currentMmr": 8739
+        },
+        {
+          "id": "2864",
+          "name": "Sepi",
+          "value": 2076,
+          "currentMmr": 2082
+        },
+        {
+          "id": "4576",
+          "name": "kyle",
+          "value": 2073,
+          "currentMmr": 3104
+        },
+        {
+          "id": "3578",
+          "name": "zach eats burger",
+          "value": 2067,
+          "currentMmr": 4569
+        },
+        {
+          "id": "670",
+          "name": "nefer",
+          "value": 2067,
+          "currentMmr": 2675
+        },
+        {
+          "id": "1055",
+          "name": "fifi",
+          "value": 2066,
+          "currentMmr": 8762
+        },
+        {
+          "id": "2916",
+          "name": "subaza",
+          "value": 2055,
+          "currentMmr": 5133
+        },
+        {
+          "id": "1074",
+          "name": "kairi",
+          "value": 2053,
+          "currentMmr": 2067
         }
       ],
       "topScores": [
@@ -6011,6 +6396,914 @@
           "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103150&ladder_id=17"
         }
       ],
+      "topScoresByRace": {
+        "12": [
+          {
+            "id": "3704",
+            "name": "ismail",
+            "value": 167,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 1",
+            "eventId": "24560",
+            "ladderId": 3,
+            "trackType": "rt",
+            "date": "2022-07-21",
+            "mmrDelta": 246,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=24560&ladder_id=3"
+          },
+          {
+            "id": "1586",
+            "name": "Kaguya",
+            "value": 167,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 0",
+            "eventId": "86423",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-02",
+            "mmrDelta": 187,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=86423&ladder_id=13"
+          },
+          {
+            "id": "3404",
+            "name": "Thanos",
+            "value": 166,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "115144",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-06-08",
+            "mmrDelta": 211,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=115144&ladder_id=19"
+          },
+          {
+            "id": "2462",
+            "name": "paul",
+            "value": 164,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "58948",
+            "ladderId": 9,
+            "trackType": "rt",
+            "date": "2024-01-19",
+            "mmrDelta": 194,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=58948&ladder_id=9"
+          },
+          {
+            "id": "1626",
+            "name": "KB9",
+            "value": 164,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "86968",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-09",
+            "mmrDelta": 182,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=86968&ladder_id=13"
+          },
+          {
+            "id": "264",
+            "name": "Azn",
+            "value": 162,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "50274",
+            "ladderId": 7,
+            "trackType": "rt",
+            "date": "2023-08-07",
+            "mmrDelta": 285,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=50274&ladder_id=7"
+          },
+          {
+            "id": "260",
+            "name": "Az",
+            "value": 162,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 5",
+            "eventId": "7110",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2021-11-16",
+            "mmrDelta": 170,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=7110&ladder_id=1"
+          },
+          {
+            "id": "2255",
+            "name": "Sylveon",
+            "value": 161,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 5",
+            "eventId": "62699",
+            "ladderId": 9,
+            "trackType": "rt",
+            "date": "2024-03-17",
+            "mmrDelta": 184,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=62699&ladder_id=9"
+          },
+          {
+            "id": "726",
+            "name": "Zapx",
+            "value": 161,
+            "races": 12,
+            "type": "6v6",
+            "tier": "Tier 1",
+            "eventId": "5440",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2021-10-22",
+            "mmrDelta": 176,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=5440&ladder_id=1"
+          },
+          {
+            "id": "1125",
+            "name": "THE ROOK",
+            "value": 161,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 1",
+            "eventId": "38140",
+            "ladderId": 5,
+            "trackType": "rt",
+            "date": "2023-02-12",
+            "mmrDelta": 90,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=38140&ladder_id=5"
+          },
+          {
+            "id": "1427",
+            "name": "jay",
+            "value": 160,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "2371",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2021-09-01",
+            "mmrDelta": 191,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=2371&ladder_id=1"
+          },
+          {
+            "id": "2408",
+            "name": "Olifre",
+            "value": 160,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "102373",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-11-23",
+            "mmrDelta": 183,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=102373&ladder_id=17"
+          },
+          {
+            "id": "1262",
+            "name": "hot dog",
+            "value": 160,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "6036",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2021-10-30",
+            "mmrDelta": 166,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=6036&ladder_id=1"
+          },
+          {
+            "id": "3563",
+            "name": "jace",
+            "value": 160,
+            "races": 12,
+            "type": "6v6",
+            "tier": "Tier 1",
+            "eventId": "11732",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2022-01-19",
+            "mmrDelta": 146,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=11732&ladder_id=1"
+          },
+          {
+            "id": "3011",
+            "name": "space",
+            "value": 159,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 0",
+            "eventId": "22355",
+            "ladderId": 3,
+            "trackType": "rt",
+            "date": "2022-06-24",
+            "mmrDelta": 185,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=22355&ladder_id=3"
+          },
+          {
+            "id": "386",
+            "name": "kitkatkittycat",
+            "value": 159,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "89268",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-04-13",
+            "mmrDelta": 180,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=89268&ladder_id=15"
+          }
+        ],
+        "32": [
+          {
+            "id": "3507",
+            "name": "Krymelmonster",
+            "value": 381,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "102280",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-11-22",
+            "mmrDelta": 460,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=102280&ladder_id=17"
+          },
+          {
+            "id": "1283",
+            "name": "Aokiji",
+            "value": 380,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "110023",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2026-03-22",
+            "mmrDelta": 749,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=110023&ladder_id=17"
+          },
+          {
+            "id": "1283",
+            "name": "Aokiji",
+            "value": 369,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "86399",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-02",
+            "mmrDelta": 560,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=86399&ladder_id=13"
+          },
+          {
+            "id": "3741",
+            "name": "Moroha",
+            "value": 367,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "91064",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-05-10",
+            "mmrDelta": 702,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91064&ladder_id=15"
+          },
+          {
+            "id": "1283",
+            "name": "Aokiji",
+            "value": 364,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "91069",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-05-10",
+            "mmrDelta": 487,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91069&ladder_id=15"
+          },
+          {
+            "id": "1221",
+            "name": "henry",
+            "value": 360,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "74012",
+            "ladderId": 11,
+            "trackType": "rt",
+            "date": "2024-09-01",
+            "mmrDelta": 445,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=74012&ladder_id=11"
+          },
+          {
+            "id": "386",
+            "name": "kitkatkittycat",
+            "value": 358,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "114486",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-05-30",
+            "mmrDelta": 297,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114486&ladder_id=19"
+          },
+          {
+            "id": "5230",
+            "name": "Danyy",
+            "value": 354,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "87883",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-03-23",
+            "mmrDelta": 707,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=87883&ladder_id=15"
+          },
+          {
+            "id": "19",
+            "name": "sixfour",
+            "value": 353,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "86399",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-02",
+            "mmrDelta": 414,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=86399&ladder_id=13"
+          },
+          {
+            "id": "691",
+            "name": "DarkChaos",
+            "value": 351,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "101824",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-11-15",
+            "mmrDelta": 453,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=101824&ladder_id=17"
+          },
+          {
+            "id": "1061",
+            "name": "Black",
+            "value": 339,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "95660",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-08-03",
+            "mmrDelta": 313,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=95660&ladder_id=15"
+          },
+          {
+            "id": "2104",
+            "name": "may is Ready2Win",
+            "value": 337,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "79883",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2024-12-08",
+            "mmrDelta": 353,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=79883&ladder_id=13"
+          },
+          {
+            "id": "3656",
+            "name": "Zyra",
+            "value": 337,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "105452",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2026-01-04",
+            "mmrDelta": 115,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=105452&ladder_id=17"
+          },
+          {
+            "id": "1614",
+            "name": "Kasperinos",
+            "value": 336,
+            "races": 32,
+            "type": "3v3",
+            "tier": "Squad Queue",
+            "eventId": "84315",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-02-01",
+            "mmrDelta": 601,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=84315&ladder_id=13"
+          },
+          {
+            "id": "3656",
+            "name": "Zyra",
+            "value": 336,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "100930",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-11-01",
+            "mmrDelta": 536,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=100930&ladder_id=17"
+          },
+          {
+            "id": "525",
+            "name": "coco day2",
+            "value": 335,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "99053",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-10-05",
+            "mmrDelta": 262,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=99053&ladder_id=17"
+          }
+        ]
+      },
+      "lowScoresByRace": {
+        "12": [
+          {
+            "id": "4682",
+            "name": "DonaldDuck",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "49512",
+            "ladderId": 7,
+            "trackType": "rt",
+            "date": "2023-07-28",
+            "mmrDelta": -90,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=49512&ladder_id=7"
+          },
+          {
+            "id": "3712",
+            "name": "Dayume",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "106428",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2026-01-19",
+            "mmrDelta": -112,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=106428&ladder_id=17"
+          },
+          {
+            "id": "5494",
+            "name": "Felix",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 0",
+            "eventId": "86575",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-03",
+            "mmrDelta": -204,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=86575&ladder_id=13"
+          },
+          {
+            "id": "5574",
+            "name": "thevarietygamer",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 2",
+            "eventId": "79267",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2024-11-29",
+            "mmrDelta": -228,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=79267&ladder_id=13"
+          },
+          {
+            "id": "6163",
+            "name": "ani211",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "116252",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-06-23",
+            "mmrDelta": -231,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=116252&ladder_id=19"
+          },
+          {
+            "id": "5063",
+            "name": "AmethystXx",
+            "value": 1,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "56298",
+            "ladderId": 9,
+            "trackType": "rt",
+            "date": "2023-12-11",
+            "mmrDelta": -235,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=56298&ladder_id=9"
+          },
+          {
+            "id": "6116",
+            "name": "Bar",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "113853",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-05-22",
+            "mmrDelta": -247,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=113853&ladder_id=19"
+          },
+          {
+            "id": "6124",
+            "name": "geCan",
+            "value": 1,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "114303",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-05-28",
+            "mmrDelta": -252,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114303&ladder_id=19"
+          },
+          {
+            "id": "6124",
+            "name": "geCan",
+            "value": 1,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 0",
+            "eventId": "114296",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-05-27",
+            "mmrDelta": -301,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114296&ladder_id=19"
+          },
+          {
+            "id": "2378",
+            "name": "noviak",
+            "value": 1,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "90630",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-05-03",
+            "mmrDelta": -321,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=90630&ladder_id=15"
+          },
+          {
+            "id": "3245",
+            "name": "Todd",
+            "value": 2,
+            "races": 12,
+            "type": "6v6",
+            "tier": "Tier 1",
+            "eventId": "33755",
+            "ladderId": 5,
+            "trackType": "rt",
+            "date": "2022-12-12",
+            "mmrDelta": 102,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=33755&ladder_id=5"
+          },
+          {
+            "id": "4682",
+            "name": "DonaldDuck",
+            "value": 2,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "69469",
+            "ladderId": 11,
+            "trackType": "rt",
+            "date": "2024-06-25",
+            "mmrDelta": -121,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=69469&ladder_id=11"
+          },
+          {
+            "id": "4621",
+            "name": "sahara",
+            "value": 2,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "45182",
+            "ladderId": 7,
+            "trackType": "rt",
+            "date": "2023-05-28",
+            "mmrDelta": -127,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=45182&ladder_id=7"
+          },
+          {
+            "id": "4956",
+            "name": "Blanki",
+            "value": 2,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 2",
+            "eventId": "103039",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-12-02",
+            "mmrDelta": -165,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103039&ladder_id=17"
+          },
+          {
+            "id": "5913",
+            "name": "albertoo saizz",
+            "value": 2,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 0",
+            "eventId": "99083",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-10-05",
+            "mmrDelta": -174,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=99083&ladder_id=17"
+          },
+          {
+            "id": "5516",
+            "name": "top10goofys",
+            "value": 2,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 2",
+            "eventId": "103150",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-12-05",
+            "mmrDelta": -182,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103150&ladder_id=17"
+          }
+        ],
+        "32": [
+          {
+            "id": "5673",
+            "name": "NatannataN",
+            "value": 13,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "99510",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-10-11",
+            "mmrDelta": -326,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=99510&ladder_id=17"
+          },
+          {
+            "id": "4438",
+            "name": "Ghost08X",
+            "value": 15,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "109153",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2026-03-08",
+            "mmrDelta": -493,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=109153&ladder_id=17"
+          },
+          {
+            "id": "4640",
+            "name": "KartGamer",
+            "value": 18,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "70410",
+            "ladderId": 11,
+            "trackType": "rt",
+            "date": "2024-07-07",
+            "mmrDelta": -553,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=70410&ladder_id=11"
+          },
+          {
+            "id": "4335",
+            "name": "aubaw",
+            "value": 26,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 3",
+            "eventId": "110853",
+            "ladderId": 19,
+            "trackType": "rt",
+            "date": "2026-04-03",
+            "mmrDelta": -627,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=110853&ladder_id=19"
+          },
+          {
+            "id": "140",
+            "name": "nihilux",
+            "value": 28,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "104318",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-12-21",
+            "mmrDelta": 0,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=104318&ladder_id=17"
+          },
+          {
+            "id": "5666",
+            "name": "donk",
+            "value": 32,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "97212",
+            "ladderId": 15,
+            "trackType": "rt",
+            "date": "2025-08-30",
+            "mmrDelta": -387,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97212&ladder_id=15"
+          },
+          {
+            "id": "5748",
+            "name": "mil",
+            "value": 34,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "87566",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-17",
+            "mmrDelta": -548,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=87566&ladder_id=13"
+          },
+          {
+            "id": "1611",
+            "name": "Mat",
+            "value": 37,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 5",
+            "eventId": "9070",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2021-12-18",
+            "mmrDelta": -769,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=9070&ladder_id=1"
+          },
+          {
+            "id": "5430",
+            "name": "qz",
+            "value": 38,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "103336",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-12-07",
+            "mmrDelta": -779,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103336&ladder_id=17"
+          },
+          {
+            "id": "5201",
+            "name": "seeblu",
+            "value": 39,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "63673",
+            "ladderId": 11,
+            "trackType": "rt",
+            "date": "2024-04-01",
+            "mmrDelta": -118,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=63673&ladder_id=11"
+          },
+          {
+            "id": "5748",
+            "name": "mil",
+            "value": 39,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "87768",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-03-21",
+            "mmrDelta": -262,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=87768&ladder_id=13"
+          },
+          {
+            "id": "3784",
+            "name": "Bloopanda",
+            "value": 39,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "5244",
+            "ladderId": 1,
+            "trackType": "rt",
+            "date": "2021-10-19",
+            "mmrDelta": -568,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=5244&ladder_id=1"
+          },
+          {
+            "id": "4025",
+            "name": "washed",
+            "value": 41,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 3",
+            "eventId": "84637",
+            "ladderId": 13,
+            "trackType": "rt",
+            "date": "2025-02-05",
+            "mmrDelta": -764,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=84637&ladder_id=13"
+          },
+          {
+            "id": "234",
+            "name": "Asuna",
+            "value": 43,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "70409",
+            "ladderId": 11,
+            "trackType": "rt",
+            "date": "2024-07-07",
+            "mmrDelta": -845,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=70409&ladder_id=11"
+          },
+          {
+            "id": "234",
+            "name": "Asuna",
+            "value": 44,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "73072",
+            "ladderId": 11,
+            "trackType": "rt",
+            "date": "2024-08-17",
+            "mmrDelta": -783,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=73072&ladder_id=11"
+          },
+          {
+            "id": "2864",
+            "name": "Sepi",
+            "value": 44,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "100425",
+            "ladderId": 17,
+            "trackType": "rt",
+            "date": "2025-10-25",
+            "mmrDelta": -1170,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=100425&ladder_id=17"
+          }
+        ]
+      },
       "breaks": [
         {
           "id": "3663",
@@ -6020,6 +7313,7 @@
           "to": "Jun 13, 2026",
           "returnScore": 123,
           "returnDelta": -507,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=115436&ladder_id=19",
           "events": 28,
           "ladderId": 19,
           "trackType": "rt"
@@ -6032,6 +7326,7 @@
           "to": "Jun 10, 2026",
           "returnScore": 71,
           "returnDelta": 262,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=115281&ladder_id=19",
           "events": 99,
           "ladderId": 19,
           "trackType": "rt"
@@ -6044,6 +7339,7 @@
           "to": "Jul 14, 2026",
           "returnScore": 33,
           "returnDelta": -344,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117669&ladder_id=19",
           "events": 5,
           "ladderId": 19,
           "trackType": "rt"
@@ -6056,6 +7352,7 @@
           "to": "Apr 4, 2026",
           "returnScore": 36,
           "returnDelta": -233,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=110885&ladder_id=19",
           "events": 3,
           "ladderId": 19,
           "trackType": "rt"
@@ -6068,6 +7365,7 @@
           "to": "Apr 11, 2026",
           "returnScore": 77,
           "returnDelta": 119,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=111397&ladder_id=19",
           "events": 33,
           "ladderId": 19,
           "trackType": "rt"
@@ -6080,6 +7378,7 @@
           "to": "Jul 13, 2026",
           "returnScore": 10,
           "returnDelta": -177,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117633&ladder_id=19",
           "events": 8,
           "ladderId": 19,
           "trackType": "rt"
@@ -6092,6 +7391,7 @@
           "to": "May 24, 2026",
           "returnScore": 56,
           "returnDelta": -81,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114073&ladder_id=19",
           "events": 5,
           "ladderId": 19,
           "trackType": "rt"
@@ -6104,6 +7404,7 @@
           "to": "Jul 14, 2026",
           "returnScore": 44,
           "returnDelta": -192,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117635&ladder_id=19",
           "events": 23,
           "ladderId": 19,
           "trackType": "rt"
@@ -6116,6 +7417,7 @@
           "to": "Feb 8, 2026",
           "returnScore": 28,
           "returnDelta": -82,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=107696&ladder_id=17",
           "events": 3,
           "ladderId": 17,
           "trackType": "rt"
@@ -6128,6 +7430,7 @@
           "to": "Apr 24, 2026",
           "returnScore": 54,
           "returnDelta": -216,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=112173&ladder_id=19",
           "events": 233,
           "ladderId": 19,
           "trackType": "rt"
@@ -6140,6 +7443,7 @@
           "to": "Dec 17, 2025",
           "returnScore": 42,
           "returnDelta": -212,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=104058&ladder_id=17",
           "events": 6,
           "ladderId": 17,
           "trackType": "rt"
@@ -6152,6 +7456,7 @@
           "to": "Dec 22, 2025",
           "returnScore": 40,
           "returnDelta": -301,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=104431&ladder_id=17",
           "events": 14,
           "ladderId": 17,
           "trackType": "rt"
@@ -6164,6 +7469,7 @@
           "to": "Sep 12, 2025",
           "returnScore": 92,
           "returnDelta": 255,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97968&ladder_id=15",
           "events": 8,
           "ladderId": 15,
           "trackType": "rt"
@@ -6176,6 +7482,7 @@
           "to": "Nov 6, 2025",
           "returnScore": 77,
           "returnDelta": 24,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=101175&ladder_id=17",
           "events": 389,
           "ladderId": 17,
           "trackType": "rt"
@@ -6188,6 +7495,7 @@
           "to": "May 14, 2025",
           "returnScore": 52,
           "returnDelta": -714,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91302&ladder_id=15",
           "events": 2,
           "ladderId": 15,
           "trackType": "rt"
@@ -6200,6 +7508,7 @@
           "to": "Sep 2, 2025",
           "returnScore": 116,
           "returnDelta": 134,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97356&ladder_id=15",
           "events": 453,
           "ladderId": 15,
           "trackType": "rt"
@@ -6567,6 +7876,44 @@
           "pct": 57.84215784215784
         }
       ],
+      "volumeByYear": [
+        {
+          "year": "2021",
+          "label": "2021",
+          "value": 7960,
+          "pct": 39.5527950310559
+        },
+        {
+          "year": "2022",
+          "label": "2022",
+          "value": 20125,
+          "pct": 100
+        },
+        {
+          "year": "2023",
+          "label": "2023",
+          "value": 17756,
+          "pct": 88.22857142857143
+        },
+        {
+          "year": "2024",
+          "label": "2024",
+          "value": 19617,
+          "pct": 97.47577639751552
+        },
+        {
+          "year": "2025",
+          "label": "2025",
+          "value": 18117,
+          "pct": 90.02236024844721
+        },
+        {
+          "year": "2026",
+          "label": "2026",
+          "value": 9411,
+          "pct": 46.76273291925466
+        }
+      ],
       "divisionSpread": [
         {
           "name": "Iron",
@@ -6648,6 +7995,7 @@
           "to": "Mar 17, 2026",
           "returnScore": 29,
           "returnDelta": -67,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=109704&ladder_id=18",
           "events": 9,
           "ladderId": 18,
           "trackType": "ct"
@@ -10572,6 +11920,390 @@
           "name": "ABHILASH",
           "value": 1339,
           "currentMmr": 12372
+        },
+        {
+          "id": "2243",
+          "name": "Mystique",
+          "value": 1329,
+          "currentMmr": 3327
+        },
+        {
+          "id": "3015",
+          "name": "Sparkster",
+          "value": 1313,
+          "currentMmr": 10096
+        },
+        {
+          "id": "2548",
+          "name": "Tony Vlachos",
+          "value": 1295,
+          "currentMmr": 8871
+        },
+        {
+          "id": "386",
+          "name": "kitkatkittycat",
+          "value": 1262,
+          "currentMmr": 10106
+        },
+        {
+          "id": "718",
+          "name": "Dawn",
+          "value": 1235,
+          "currentMmr": 5746
+        },
+        {
+          "id": "2478",
+          "name": "8610",
+          "value": 1213,
+          "currentMmr": 5935
+        },
+        {
+          "id": "3046",
+          "name": "Spock",
+          "value": 1198,
+          "currentMmr": 3538
+        },
+        {
+          "id": "3093",
+          "name": "Crim",
+          "value": 1195,
+          "currentMmr": 4566
+        },
+        {
+          "id": "950",
+          "name": "HYPERPOPPERS",
+          "value": 1154,
+          "currentMmr": 7939
+        },
+        {
+          "id": "612",
+          "name": "GAMT Luna",
+          "value": 1139,
+          "currentMmr": 5303
+        },
+        {
+          "id": "1618",
+          "name": "kato",
+          "value": 1139,
+          "currentMmr": 5244
+        },
+        {
+          "id": "3237",
+          "name": "Captain Slow",
+          "value": 1095,
+          "currentMmr": 3569
+        },
+        {
+          "id": "140",
+          "name": "nihilux",
+          "value": 1085,
+          "currentMmr": 5450
+        },
+        {
+          "id": "742",
+          "name": "Isa",
+          "value": 1083,
+          "currentMmr": 3347
+        },
+        {
+          "id": "2449",
+          "name": "PandaMan",
+          "value": 1053,
+          "currentMmr": 4477
+        },
+        {
+          "id": "3623",
+          "name": "zilla",
+          "value": 1028,
+          "currentMmr": 10877
+        },
+        {
+          "id": "1829",
+          "name": "Betta",
+          "value": 1019,
+          "currentMmr": 7359
+        },
+        {
+          "id": "1907",
+          "name": "Kai Havertz",
+          "value": 1013,
+          "currentMmr": 5128
+        },
+        {
+          "id": "2823",
+          "name": "sasuke",
+          "value": 1013,
+          "currentMmr": 2553
+        },
+        {
+          "id": "4088",
+          "name": "Ford",
+          "value": 984,
+          "currentMmr": 6918
+        },
+        {
+          "id": "908",
+          "name": "End",
+          "value": 977,
+          "currentMmr": 5575
+        },
+        {
+          "id": "3510",
+          "name": "Thunda",
+          "value": 962,
+          "currentMmr": 7323
+        },
+        {
+          "id": "617",
+          "name": "Darnell",
+          "value": 956,
+          "currentMmr": 5122
+        },
+        {
+          "id": "3725",
+          "name": "froyo",
+          "value": 948,
+          "currentMmr": 5183
+        },
+        {
+          "id": "3859",
+          "name": "holy",
+          "value": 943,
+          "currentMmr": 10565
+        },
+        {
+          "id": "2378",
+          "name": "noviak",
+          "value": 939,
+          "currentMmr": 5038
+        },
+        {
+          "id": "2761",
+          "name": "GAMT British",
+          "value": 937,
+          "currentMmr": 6584
+        },
+        {
+          "id": "637",
+          "name": "eten",
+          "value": 921,
+          "currentMmr": 7758
+        },
+        {
+          "id": "3096",
+          "name": "Stubbz",
+          "value": 919,
+          "currentMmr": 7050
+        },
+        {
+          "id": "1071",
+          "name": "fruitz_delete_2024-06-24 14:14:36",
+          "value": 902,
+          "currentMmr": 0
+        },
+        {
+          "id": "2405",
+          "name": "oj",
+          "value": 900,
+          "currentMmr": 4455
+        },
+        {
+          "id": "1342",
+          "name": "jojo",
+          "value": 862,
+          "currentMmr": 7387
+        },
+        {
+          "id": "1796",
+          "name": "Lochie",
+          "value": 853,
+          "currentMmr": 9869
+        },
+        {
+          "id": "3780",
+          "name": "JC",
+          "value": 835,
+          "currentMmr": 4406
+        },
+        {
+          "id": "2136",
+          "name": "french fries",
+          "value": 809,
+          "currentMmr": 2675
+        },
+        {
+          "id": "1759",
+          "name": "mawile",
+          "value": 805,
+          "currentMmr": 4931
+        },
+        {
+          "id": "2134",
+          "name": "mike",
+          "value": 800,
+          "currentMmr": 8964
+        },
+        {
+          "id": "1648",
+          "name": "zay",
+          "value": 790,
+          "currentMmr": 4921
+        },
+        {
+          "id": "2426",
+          "name": "m1",
+          "value": 758,
+          "currentMmr": 6788
+        },
+        {
+          "id": "430",
+          "name": "noob bugha",
+          "value": 755,
+          "currentMmr": 11369
+        },
+        {
+          "id": "2861",
+          "name": "Serene",
+          "value": 751,
+          "currentMmr": 4640
+        },
+        {
+          "id": "4191",
+          "name": "Enma",
+          "value": 739,
+          "currentMmr": 2770
+        },
+        {
+          "id": "352",
+          "name": "Captain Burger",
+          "value": 736,
+          "currentMmr": 4098
+        },
+        {
+          "id": "863",
+          "name": "Super JohnMcGinn",
+          "value": 735,
+          "currentMmr": 5856
+        },
+        {
+          "id": "5541",
+          "name": "N8",
+          "value": 725,
+          "currentMmr": 5004
+        },
+        {
+          "id": "1631",
+          "name": "Jonah Hill",
+          "value": 724,
+          "currentMmr": 3344
+        },
+        {
+          "id": "1390",
+          "name": "James",
+          "value": 721,
+          "currentMmr": 6632
+        },
+        {
+          "id": "2533",
+          "name": "Lumis",
+          "value": 718,
+          "currentMmr": 4658
+        },
+        {
+          "id": "1614",
+          "name": "Kasperinos",
+          "value": 711,
+          "currentMmr": 14179
+        },
+        {
+          "id": "3538",
+          "name": "Yoni",
+          "value": 706,
+          "currentMmr": 2309
+        },
+        {
+          "id": "1460",
+          "name": "Jinx",
+          "value": 701,
+          "currentMmr": 7547
+        },
+        {
+          "id": "280",
+          "name": "Bally",
+          "value": 678,
+          "currentMmr": 4949
+        },
+        {
+          "id": "1994",
+          "name": "GenevieveVavance",
+          "value": 678,
+          "currentMmr": 2924
+        },
+        {
+          "id": "1597",
+          "name": "Kalkk",
+          "value": 677,
+          "currentMmr": 1140
+        },
+        {
+          "id": "1757",
+          "name": "kuroka",
+          "value": 672,
+          "currentMmr": 2791
+        },
+        {
+          "id": "2838",
+          "name": "Schwoz",
+          "value": 669,
+          "currentMmr": 4101
+        },
+        {
+          "id": "512",
+          "name": "Charlie",
+          "value": 663,
+          "currentMmr": 6350
+        },
+        {
+          "id": "235",
+          "name": "Alexander",
+          "value": 645,
+          "currentMmr": 5022
+        },
+        {
+          "id": "948",
+          "name": "evantx",
+          "value": 644,
+          "currentMmr": 3727
+        },
+        {
+          "id": "478",
+          "name": "Canton",
+          "value": 642,
+          "currentMmr": 8354
+        },
+        {
+          "id": "3119",
+          "name": "blarn",
+          "value": 636,
+          "currentMmr": 6860
+        },
+        {
+          "id": "2677",
+          "name": "Zoot McSchmoove",
+          "value": 636,
+          "currentMmr": 3781
+        },
+        {
+          "id": "5058",
+          "name": "ZeroUS",
+          "value": 633,
+          "currentMmr": 2614
+        },
+        {
+          "id": "1935",
+          "name": "hazr",
+          "value": 633,
+          "currentMmr": 2523
         }
       ],
       "topScores": [
@@ -11026,6 +12758,914 @@
           "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117032&ladder_id=20"
         }
       ],
+      "topScoresByRace": {
+        "12": [
+          {
+            "id": "806",
+            "name": "towner",
+            "value": 180,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 3",
+            "eventId": "97579",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-09-06",
+            "mmrDelta": 73,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97579&ladder_id=16"
+          },
+          {
+            "id": "3623",
+            "name": "zilla",
+            "value": 171,
+            "races": 12,
+            "type": "6v6",
+            "tier": "Tier 3",
+            "eventId": "27150",
+            "ladderId": 4,
+            "trackType": "ct",
+            "date": "2022-08-22",
+            "mmrDelta": 94,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=27150&ladder_id=4"
+          },
+          {
+            "id": "3623",
+            "name": "zilla",
+            "value": 167,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier alldiv",
+            "eventId": "102012",
+            "ladderId": 18,
+            "trackType": "ct",
+            "date": "2025-11-18",
+            "mmrDelta": 58,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=102012&ladder_id=18"
+          },
+          {
+            "id": "1796",
+            "name": "Lochie",
+            "value": 165,
+            "races": 12,
+            "type": "6v6",
+            "tier": "Tier 3",
+            "eventId": "95493",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-07-31",
+            "mmrDelta": -139,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=95493&ladder_id=16"
+          },
+          {
+            "id": "3595",
+            "name": "alan9e",
+            "value": 164,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "62070",
+            "ladderId": 10,
+            "trackType": "ct",
+            "date": "2024-03-07",
+            "mmrDelta": 157,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=62070&ladder_id=10"
+          },
+          {
+            "id": "3093",
+            "name": "Crim",
+            "value": 161,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier alldiv",
+            "eventId": "107480",
+            "ladderId": 18,
+            "trackType": "ct",
+            "date": "2026-02-05",
+            "mmrDelta": 108,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=107480&ladder_id=18"
+          },
+          {
+            "id": "908",
+            "name": "End",
+            "value": 161,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "52706",
+            "ladderId": 8,
+            "trackType": "ct",
+            "date": "2023-09-22",
+            "mmrDelta": 89,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=52706&ladder_id=8"
+          },
+          {
+            "id": "1035",
+            "name": "Fhana",
+            "value": 160,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "13500",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2022-02-15",
+            "mmrDelta": 289,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=13500&ladder_id=2"
+          },
+          {
+            "id": "3538",
+            "name": "Yoni",
+            "value": 160,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "48980",
+            "ladderId": 8,
+            "trackType": "ct",
+            "date": "2023-07-21",
+            "mmrDelta": 155,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=48980&ladder_id=8"
+          },
+          {
+            "id": "2103",
+            "name": "mhs",
+            "value": 159,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "4006",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2021-10-01",
+            "mmrDelta": 161,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=4006&ladder_id=2"
+          },
+          {
+            "id": "691",
+            "name": "DarkChaos",
+            "value": 158,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "62198",
+            "ladderId": 10,
+            "trackType": "ct",
+            "date": "2024-03-09",
+            "mmrDelta": 246,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=62198&ladder_id=10"
+          },
+          {
+            "id": "1891",
+            "name": "Mikel Arteta",
+            "value": 157,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "27646",
+            "ladderId": 4,
+            "trackType": "ct",
+            "date": "2022-08-29",
+            "mmrDelta": 172,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=27646&ladder_id=4"
+          },
+          {
+            "id": "3623",
+            "name": "zilla",
+            "value": 156,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 4",
+            "eventId": "9386",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2021-12-22",
+            "mmrDelta": 121,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=9386&ladder_id=2"
+          },
+          {
+            "id": "386",
+            "name": "kitkatkittycat",
+            "value": 156,
+            "races": 12,
+            "type": "4v4",
+            "tier": "Tier alldiv",
+            "eventId": "103716",
+            "ladderId": 18,
+            "trackType": "ct",
+            "date": "2025-12-13",
+            "mmrDelta": 57,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103716&ladder_id=18"
+          },
+          {
+            "id": "2348",
+            "name": "Nlaw",
+            "value": 154,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "78540",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2024-11-18",
+            "mmrDelta": 389,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=78540&ladder_id=14"
+          },
+          {
+            "id": "386",
+            "name": "kitkatkittycat",
+            "value": 154,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 4",
+            "eventId": "95402",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-07-29",
+            "mmrDelta": 183,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=95402&ladder_id=16"
+          }
+        ],
+        "32": [
+          {
+            "id": "386",
+            "name": "kitkatkittycat",
+            "value": 330,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "109187",
+            "ladderId": 18,
+            "trackType": "ct",
+            "date": "2026-03-09",
+            "mmrDelta": 325,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=109187&ladder_id=18"
+          },
+          {
+            "id": "2238",
+            "name": "burgertoad",
+            "value": 324,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "91169",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-05-11",
+            "mmrDelta": 429,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91169&ladder_id=16"
+          },
+          {
+            "id": "83",
+            "name": "camelrider",
+            "value": 322,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "98506",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-09-21",
+            "mmrDelta": 247,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=98506&ladder_id=16"
+          },
+          {
+            "id": "4294",
+            "name": "TCR",
+            "value": 315,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "114508",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-05-31",
+            "mmrDelta": 83,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114508&ladder_id=20"
+          },
+          {
+            "id": "430",
+            "name": "noob bugha",
+            "value": 301,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 2",
+            "eventId": "80265",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2024-12-15",
+            "mmrDelta": 288,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=80265&ladder_id=14"
+          },
+          {
+            "id": "1887",
+            "name": "sq",
+            "value": 300,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "80751",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2024-12-21",
+            "mmrDelta": 698,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=80751&ladder_id=14"
+          },
+          {
+            "id": "1038",
+            "name": "Jackie",
+            "value": 299,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "46976",
+            "ladderId": 8,
+            "trackType": "ct",
+            "date": "2023-06-25",
+            "mmrDelta": 521,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=46976&ladder_id=8"
+          },
+          {
+            "id": "843",
+            "name": "spongebob",
+            "value": 298,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "60027",
+            "ladderId": 10,
+            "trackType": "ct",
+            "date": "2024-02-04",
+            "mmrDelta": 964,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=60027&ladder_id=10"
+          },
+          {
+            "id": "3162",
+            "name": "arti",
+            "value": 298,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 4",
+            "eventId": "10612",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2022-01-04",
+            "mmrDelta": 410,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=10612&ladder_id=2"
+          },
+          {
+            "id": "3171",
+            "name": "Tectrox",
+            "value": 296,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "89511",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-04-16",
+            "mmrDelta": 583,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=89511&ladder_id=16"
+          },
+          {
+            "id": "905",
+            "name": "Emil",
+            "value": 294,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "88345",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-03-29",
+            "mmrDelta": 350,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=88345&ladder_id=16"
+          },
+          {
+            "id": "4294",
+            "name": "TCR",
+            "value": 293,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 2",
+            "eventId": "117697",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-07-15",
+            "mmrDelta": 445,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117697&ladder_id=20"
+          },
+          {
+            "id": "386",
+            "name": "kitkatkittycat",
+            "value": 293,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 2",
+            "eventId": "77619",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2024-11-01",
+            "mmrDelta": 234,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=77619&ladder_id=14"
+          },
+          {
+            "id": "3859",
+            "name": "holy",
+            "value": 293,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "114508",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-05-31",
+            "mmrDelta": 83,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114508&ladder_id=20"
+          },
+          {
+            "id": "3015",
+            "name": "Sparkster",
+            "value": 288,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "80252",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2024-12-15",
+            "mmrDelta": 599,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=80252&ladder_id=14"
+          },
+          {
+            "id": "1362",
+            "name": "Jack",
+            "value": 287,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "96471",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-08-16",
+            "mmrDelta": 599,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=96471&ladder_id=16"
+          }
+        ]
+      },
+      "lowScoresByRace": {
+        "12": [
+          {
+            "id": "4545",
+            "name": "LukeYorke",
+            "value": 1,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "35104",
+            "ladderId": 6,
+            "trackType": "ct",
+            "date": "2022-12-29",
+            "mmrDelta": -228,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=35104&ladder_id=6"
+          },
+          {
+            "id": "1752",
+            "name": "KT",
+            "value": 2,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier alldiv",
+            "eventId": "112142",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-04-24",
+            "mmrDelta": -56,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=112142&ladder_id=20"
+          },
+          {
+            "id": "4186",
+            "name": "Mobs",
+            "value": 2,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "60012",
+            "ladderId": 10,
+            "trackType": "ct",
+            "date": "2024-02-04",
+            "mmrDelta": -88,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=60012&ladder_id=10"
+          },
+          {
+            "id": "4462",
+            "name": "GamerLife",
+            "value": 2,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "33747",
+            "ladderId": 6,
+            "trackType": "ct",
+            "date": "2022-12-12",
+            "mmrDelta": -157,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=33747&ladder_id=6"
+          },
+          {
+            "id": "6035",
+            "name": "DaLegendaryMan",
+            "value": 2,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier alldiv",
+            "eventId": "117036",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-07-05",
+            "mmrDelta": -162,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117036&ladder_id=20"
+          },
+          {
+            "id": "4545",
+            "name": "LukeYorke",
+            "value": 2,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "35103",
+            "ladderId": 6,
+            "trackType": "ct",
+            "date": "2022-12-29",
+            "mmrDelta": -171,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=35103&ladder_id=6"
+          },
+          {
+            "id": "4186",
+            "name": "Mobs",
+            "value": 3,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "66466",
+            "ladderId": 12,
+            "trackType": "ct",
+            "date": "2024-05-12",
+            "mmrDelta": -88,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=66466&ladder_id=12"
+          },
+          {
+            "id": "2606",
+            "name": "rammyboos",
+            "value": 3,
+            "races": 12,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "73824",
+            "ladderId": 12,
+            "trackType": "ct",
+            "date": "2024-08-29",
+            "mmrDelta": -190,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=73824&ladder_id=12"
+          },
+          {
+            "id": "1672",
+            "name": "Kimmy",
+            "value": 3,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "61623",
+            "ladderId": 10,
+            "trackType": "ct",
+            "date": "2024-02-29",
+            "mmrDelta": -240,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=61623&ladder_id=10"
+          },
+          {
+            "id": "4186",
+            "name": "Mobs",
+            "value": 3,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "21126",
+            "ladderId": 4,
+            "trackType": "ct",
+            "date": "2022-06-08",
+            "mmrDelta": -255,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=21126&ladder_id=4"
+          },
+          {
+            "id": "1672",
+            "name": "Kimmy",
+            "value": 3,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 1",
+            "eventId": "5571",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2021-10-23",
+            "mmrDelta": -270,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=5571&ladder_id=2"
+          },
+          {
+            "id": "1005",
+            "name": "feet",
+            "value": 3,
+            "races": 12,
+            "type": "3v3",
+            "tier": "Tier 1",
+            "eventId": "3710",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2021-09-26",
+            "mmrDelta": -292,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=3710&ladder_id=2"
+          },
+          {
+            "id": "4507",
+            "name": "WiiMusicDaBest",
+            "value": 4,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "33290",
+            "ladderId": 6,
+            "trackType": "ct",
+            "date": "2022-12-02",
+            "mmrDelta": -100,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=33290&ladder_id=6"
+          },
+          {
+            "id": "4186",
+            "name": "Mobs",
+            "value": 4,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "46398",
+            "ladderId": 8,
+            "trackType": "ct",
+            "date": "2023-06-16",
+            "mmrDelta": -110,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=46398&ladder_id=8"
+          },
+          {
+            "id": "5199",
+            "name": "iluvboxxybabbee",
+            "value": 4,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier 1",
+            "eventId": "62144",
+            "ladderId": 10,
+            "trackType": "ct",
+            "date": "2024-03-09",
+            "mmrDelta": -135,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=62144&ladder_id=10"
+          },
+          {
+            "id": "6035",
+            "name": "DaLegendaryMan",
+            "value": 4,
+            "races": 12,
+            "type": "2v2",
+            "tier": "Tier alldiv",
+            "eventId": "117032",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-07-05",
+            "mmrDelta": -147,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117032&ladder_id=20"
+          }
+        ],
+        "32": [
+          {
+            "id": "1386",
+            "name": "TonyGamingMKW",
+            "value": 28,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "94783",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-07-20",
+            "mmrDelta": -483,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=94783&ladder_id=16"
+          },
+          {
+            "id": "4437",
+            "name": "Gwynne005",
+            "value": 32,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "109189",
+            "ladderId": 18,
+            "trackType": "ct",
+            "date": "2026-03-09",
+            "mmrDelta": -572,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=109189&ladder_id=18"
+          },
+          {
+            "id": "5795",
+            "name": "yqkoz",
+            "value": 57,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "97224",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-08-30",
+            "mmrDelta": -57,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97224&ladder_id=16"
+          },
+          {
+            "id": "5186",
+            "name": "Laura",
+            "value": 57,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "112260",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-04-25",
+            "mmrDelta": -427,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=112260&ladder_id=20"
+          },
+          {
+            "id": "4678",
+            "name": "lr",
+            "value": 60,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "88345",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-03-29",
+            "mmrDelta": -231,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=88345&ladder_id=16"
+          },
+          {
+            "id": "5510",
+            "name": "EPVG",
+            "value": 62,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "83343",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2025-01-19",
+            "mmrDelta": -213,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=83343&ladder_id=14"
+          },
+          {
+            "id": "1936",
+            "name": "LucyLX",
+            "value": 68,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "96472",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-08-16",
+            "mmrDelta": -251,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=96472&ladder_id=16"
+          },
+          {
+            "id": "3246",
+            "name": "Toddy",
+            "value": 69,
+            "races": 32,
+            "type": "2v2",
+            "tier": "Squad Queue",
+            "eventId": "94783",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-07-20",
+            "mmrDelta": -483,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=94783&ladder_id=16"
+          },
+          {
+            "id": "3547",
+            "name": "zyoshi",
+            "value": 69,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "91169",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-05-11",
+            "mmrDelta": -487,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91169&ladder_id=16"
+          },
+          {
+            "id": "5299",
+            "name": "faruzeru",
+            "value": 73,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "117943",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-07-19",
+            "mmrDelta": -575,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117943&ladder_id=20"
+          },
+          {
+            "id": "5510",
+            "name": "EPVG",
+            "value": 74,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Squad Queue",
+            "eventId": "77618",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2024-11-01",
+            "mmrDelta": -535,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=77618&ladder_id=14"
+          },
+          {
+            "id": "5228",
+            "name": "Sisyphus",
+            "value": 75,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "83431",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2025-01-20",
+            "mmrDelta": -216,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=83431&ladder_id=14"
+          },
+          {
+            "id": "2606",
+            "name": "rammyboos",
+            "value": 83,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "91169",
+            "ladderId": 16,
+            "trackType": "ct",
+            "date": "2025-05-11",
+            "mmrDelta": -460,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91169&ladder_id=16"
+          },
+          {
+            "id": "958",
+            "name": "EXORCISM",
+            "value": 84,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "4532",
+            "ladderId": 2,
+            "trackType": "ct",
+            "date": "2021-10-09",
+            "mmrDelta": -755,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=4532&ladder_id=2"
+          },
+          {
+            "id": "5189",
+            "name": "Reid",
+            "value": 90,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 2",
+            "eventId": "85662",
+            "ladderId": 14,
+            "trackType": "ct",
+            "date": "2025-02-19",
+            "mmrDelta": -392,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=85662&ladder_id=14"
+          },
+          {
+            "id": "4653",
+            "name": "wafflehouse",
+            "value": 90,
+            "races": 32,
+            "type": "FFA",
+            "tier": "Tier 1",
+            "eventId": "117933",
+            "ladderId": 20,
+            "trackType": "ct",
+            "date": "2026-07-19",
+            "mmrDelta": -452,
+            "eventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117933&ladder_id=20"
+          }
+        ]
+      },
       "breaks": [
         {
           "id": "315",
@@ -11035,6 +13675,7 @@
           "to": "Mar 17, 2026",
           "returnScore": 29,
           "returnDelta": -67,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=109704&ladder_id=18",
           "events": 9,
           "ladderId": 18,
           "trackType": "ct"
@@ -11047,6 +13688,7 @@
           "to": "Jul 7, 2026",
           "returnScore": 62,
           "returnDelta": 181,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=117213&ladder_id=20",
           "events": 2,
           "ladderId": 20,
           "trackType": "ct"
@@ -11059,6 +13701,7 @@
           "to": "Jun 17, 2026",
           "returnScore": 35,
           "returnDelta": -182,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=115708&ladder_id=20",
           "events": 3,
           "ladderId": 20,
           "trackType": "ct"
@@ -11071,6 +13714,7 @@
           "to": "May 29, 2026",
           "returnScore": 48,
           "returnDelta": -2,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=114386&ladder_id=20",
           "events": 4,
           "ladderId": 20,
           "trackType": "ct"
@@ -11083,6 +13727,7 @@
           "to": "May 17, 2025",
           "returnScore": 63,
           "returnDelta": -211,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=91514&ladder_id=16",
           "events": 9,
           "ladderId": 16,
           "trackType": "ct"
@@ -11095,6 +13740,7 @@
           "to": "Sep 2, 2025",
           "returnScore": 54,
           "returnDelta": 113,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97361&ladder_id=16",
           "events": 395,
           "ladderId": 16,
           "trackType": "ct"
@@ -11107,6 +13753,7 @@
           "to": "Aug 27, 2025",
           "returnScore": 45,
           "returnDelta": -2,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=97056&ladder_id=16",
           "events": 5,
           "ladderId": 16,
           "trackType": "ct"
@@ -11119,6 +13766,7 @@
           "to": "Dec 15, 2025",
           "returnScore": 61,
           "returnDelta": 135,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103931&ladder_id=18",
           "events": 9,
           "ladderId": 18,
           "trackType": "ct"
@@ -11131,6 +13779,7 @@
           "to": "Dec 21, 2024",
           "returnScore": 76,
           "returnDelta": 356,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=80763&ladder_id=14",
           "events": 47,
           "ladderId": 14,
           "trackType": "ct"
@@ -11143,6 +13792,7 @@
           "to": "Dec 20, 2024",
           "returnScore": 111,
           "returnDelta": -224,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=80726&ladder_id=14",
           "events": 2,
           "ladderId": 14,
           "trackType": "ct"
@@ -11155,6 +13805,7 @@
           "to": "Feb 17, 2025",
           "returnScore": 31,
           "returnDelta": -84,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=85513&ladder_id=14",
           "events": 46,
           "ladderId": 14,
           "trackType": "ct"
@@ -11167,6 +13818,7 @@
           "to": "Dec 14, 2025",
           "returnScore": 33,
           "returnDelta": -220,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=103773&ladder_id=18",
           "events": 7,
           "ladderId": 18,
           "trackType": "ct"
@@ -11179,6 +13831,7 @@
           "to": "Dec 5, 2024",
           "returnScore": 48,
           "returnDelta": -69,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=79649&ladder_id=14",
           "events": 7,
           "ladderId": 14,
           "trackType": "ct"
@@ -11191,6 +13844,7 @@
           "to": "Mar 15, 2025",
           "returnScore": 31,
           "returnDelta": -144,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=87400&ladder_id=14",
           "events": 7,
           "ladderId": 14,
           "trackType": "ct"
@@ -11203,6 +13857,7 @@
           "to": "Oct 26, 2025",
           "returnScore": 79,
           "returnDelta": 284,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=100530&ladder_id=18",
           "events": 14,
           "ladderId": 18,
           "trackType": "ct"
@@ -11215,6 +13870,7 @@
           "to": "Sep 25, 2024",
           "returnScore": 21,
           "returnDelta": -186,
+          "returnEventUrl": "https://www.mkwlounge.gg/ladder/table.php?event_id=75343&ladder_id=14",
           "events": 7,
           "ladderId": 14,
           "trackType": "ct"
@@ -11580,6 +14236,44 @@
           "label": "Jul 2026",
           "value": 150,
           "pct": 30.800821355236142
+        }
+      ],
+      "volumeByYear": [
+        {
+          "year": "2021",
+          "label": "2021",
+          "value": 1999,
+          "pct": 49.81310740094692
+        },
+        {
+          "year": "2022",
+          "label": "2022",
+          "value": 4013,
+          "pct": 100
+        },
+        {
+          "year": "2023",
+          "label": "2023",
+          "value": 3466,
+          "pct": 86.36929977572888
+        },
+        {
+          "year": "2024",
+          "label": "2024",
+          "value": 2824,
+          "pct": 70.37129329678544
+        },
+        {
+          "year": "2025",
+          "label": "2025",
+          "value": 2419,
+          "pct": 60.27909294791927
+        },
+        {
+          "year": "2026",
+          "label": "2026",
+          "value": 1033,
+          "pct": 25.741340642910544
         }
       ],
       "divisionSpread": [

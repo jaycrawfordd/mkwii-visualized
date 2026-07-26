@@ -36,6 +36,10 @@ test("server-renders the MKW Lounge dashboard", async () => {
   assert.match(html, /92,986/);
   assert.match(html, /Kasperinos/);
   assert.match(html, /Most All-Time Events/);
+  assert.match(html, /Highest Event Scores/);
+  assert.match(html, /12 races/);
+  assert.match(html, /Events per Year/);
+  assert.match(html, /Live Export Status/);
   assert.match(html, /Players Who Hit RT Grandmaster All Time/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
@@ -50,5 +54,12 @@ test("ships the generated all-time ladder summary", async () => {
   assert.ok(data.byTrack.rt.timeline.length > 400);
   assert.ok(data.byTrack.ct.timeline.length > 250);
   assert.ok(data.byTrack.rt.topScores[0].eventUrl.includes("table.php"));
+  assert.equal(data.byTrack.rt.topScoresByRace["12"][0].races, 12);
+  assert.equal(data.byTrack.rt.topScoresByRace["32"][0].races, 32);
+  assert.equal(data.byTrack.rt.lowScoresByRace["12"][0].races, 12);
+  assert.equal(data.byTrack.rt.lowScoresByRace["32"][0].races, 32);
+  assert.ok(data.byTrack.rt.breaks[0].returnEventUrl.includes("table.php"));
+  assert.ok(data.byTrack.rt.allEventCounts.length >= 60);
+  assert.ok(data.byTrack.rt.volumeByYear.length >= 5);
   assert.ok(data.rtGrandmasters.length > 25);
 });

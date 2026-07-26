@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type TrackType = "rt" | "ct";
 
@@ -48,6 +48,7 @@ type BreakRow = {
   to: string;
   returnScore: number;
   returnDelta: number;
+  returnEventUrl?: string;
   events: number;
   ladderId: number;
   trackType: TrackType;
@@ -101,8 +102,11 @@ type TrackData = {
   allEventCounts: Array<{ id: string; name: string; value: number; currentMmr: number }>;
   topScores: ScoreRow[];
   lowScores: ScoreRow[];
+  topScoresByRace: Record<"12" | "32", ScoreRow[]>;
+  lowScoresByRace: Record<"12" | "32", ScoreRow[]>;
   breaks: BreakRow[];
   volumeByMonth: VolumeRow[];
+  volumeByYear: VolumeRow[];
   divisionSpread: DivisionRow[];
 };
 
@@ -128,8 +132,27 @@ type DashboardData = {
   rtGrandmasters: RtGrandmaster[];
 };
 
+type LiveSnapshot = {
+  checkedAt: string;
+  tracks: Record<
+    TrackType,
+    {
+      label: string;
+      ladderId: number;
+      pageUrl: string;
+      currentTimestamp: string | null;
+      leaderboard: { text: string | null; href: string | null };
+      events: { text: string | null; href: string | null };
+    }
+  >;
+};
+
 const tabs = ["Overview", "Rank 1", "Records", "Returns", "RT GMs"] as const;
 type Tab = (typeof tabs)[number];
+type RaceFilter = "12" | "32";
+type RangeFilter = "all" | string;
+
+const dayMs = 86400000;
 
 function formatNumber(value: number) {
   return new Intl.NumberFormat("en-US").format(value);
@@ -148,12 +171,61 @@ function shortDate(value: string) {
   }).format(new Date(`${value}T00:00:00Z`));
 }
 
+function dateMs(value: string) {
+  return Date.parse(`${value}T00:00:00Z`);
+}
+
+function yearRange(year: string) {
+  const start = Date.parse(`${year}-01-01T00:00:00Z`);
+  const end = Date.parse(`${Number(year) + 1}-01-01T00:00:00Z`);
+  return { start, end };
+}
+
+function formatCheckedAt(value: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(new Date(value));
+}
+
 function StatTile({ label, value, detail }: { label: string; value: string; detail: string }) {
   return (
     <div className="stat-tile">
       <span>{label}</span>
       <strong>{value}</strong>
       <small>{detail}</small>
+    </div>
+  );
+}
+
+function SegmentedControl<T extends string>({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: T;
+  options: Array<{ value: T; label: string }>;
+  onChange: (value: T) => void;
+}) {
+  return (
+    <div className="control-group">
+      <span>{label}</span>
+      <div className="segmented-control">
+        {options.map((option) => (
+          <button
+            className={value === option.value ? "active" : ""}
+            key={option.value}
+            onClick={() => onChange(option.value)}
+            type="button"
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
@@ -259,6 +331,78 @@ function ScoreTable({ rows, mode }: { rows: ScoreRow[]; mode: "high" | "low" }) 
   );
 }
 
+function buildRankRange(
+  rows: TimelineRow[],
+  range: RangeFilter,
+): { timeline: TimelineRow[]; leaderboard: RankOneRow[]; label: string } {
+  if (range === "all") {
+    const leaderboard = new Map<string, RankOneRow>();
+    rows.forEach((row) => {
+      const current = leaderboard.get(row.id) ?? {
+        id: row.id,
+        name: row.name,
+        days: 0,
+        stints: 0,
+        peakMmr: 0,
+      };
+      current.days += row.days;
+      current.stints += 1;
+      current.peakMmr = Math.max(current.peakMmr, row.peakMmr);
+      leaderboard.set(row.id, current);
+    });
+    return {
+      timeline: rows,
+      leaderboard: [...leaderboard.values()].sort((a, b) => b.days - a.days || b.peakMmr - a.peakMmr),
+      label: "All time",
+    };
+  }
+
+  const { start, end } = yearRange(range);
+  const visible = rows
+    .map((row) => {
+      const rowStart = dateMs(row.start);
+      const rowEnd = Math.max(dateMs(row.end), rowStart + dayMs);
+      const clippedStart = Math.max(rowStart, start);
+      const clippedEnd = Math.min(rowEnd, end);
+
+      if (clippedEnd <= clippedStart) {
+        return null;
+      }
+
+      const days = Math.max(1, Math.round((clippedEnd - clippedStart) / dayMs));
+      return {
+        ...row,
+        start: new Date(clippedStart).toISOString().slice(0, 10),
+        end: new Date(clippedEnd).toISOString().slice(0, 10),
+        days,
+        offsetPct: ((clippedStart - start) / Math.max(1, end - start)) * 100,
+        widthPct: ((clippedEnd - clippedStart) / Math.max(1, end - start)) * 100,
+      };
+    })
+    .filter(Boolean) as TimelineRow[];
+
+  const leaderboard = new Map<string, RankOneRow>();
+  visible.forEach((row) => {
+    const current = leaderboard.get(row.id) ?? {
+      id: row.id,
+      name: row.name,
+      days: 0,
+      stints: 0,
+      peakMmr: 0,
+    };
+    current.days += row.days;
+    current.stints += 1;
+    current.peakMmr = Math.max(current.peakMmr, row.peakMmr);
+    leaderboard.set(row.id, current);
+  });
+
+  return {
+    timeline: visible,
+    leaderboard: [...leaderboard.values()].sort((a, b) => b.days - a.days || b.peakMmr - a.peakMmr),
+    label: range,
+  };
+}
+
 function Timeline({ rows }: { rows: TimelineRow[] }) {
   const [activeRow, setActiveRow] = useState<TimelineRow | null>(null);
   const colorMap = useMemo(() => {
@@ -319,6 +463,39 @@ function Timeline({ rows }: { rows: TimelineRow[] }) {
   );
 }
 
+function LiveStatus({ live, onRefresh }: { live: LiveSnapshot | null; onRefresh: () => void }) {
+  return (
+    <section className="live-strip" aria-label="Live MKW Lounge export status">
+      <div>
+        <p className="eyebrow">Live Export Status</p>
+        <h2>MKW Lounge hourly source check</h2>
+      </div>
+      <div className="live-items">
+        {(["rt", "ct"] as TrackType[]).map((track) => {
+          const item = live?.tracks[track];
+          return (
+            <div className="live-item" key={track}>
+              <strong>{track.toUpperCase()}</strong>
+              <span>{item?.currentTimestamp ?? "Checking..."}</span>
+              {item?.events.href ? (
+                <a href={item.events.href} rel="noreferrer" target="_blank">
+                  {item.events.text ?? "Events CSV"}
+                </a>
+              ) : (
+                <small>Events CSV pending</small>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <button onClick={onRefresh} type="button">
+        Refresh
+      </button>
+      <small>{live ? `Checked ${formatCheckedAt(live.checkedAt)}` : "Pulls live metadata from mkwlounge.gg"}</small>
+    </section>
+  );
+}
+
 function GrandmasterTable({ rows }: { rows: RtGrandmaster[] }) {
   return (
     <div className="table-wrap">
@@ -361,8 +538,35 @@ function GrandmasterTable({ rows }: { rows: RtGrandmaster[] }) {
 export default function Dashboard({ data }: { data: DashboardData }) {
   const [activeTab, setActiveTab] = useState<Tab>("Overview");
   const [track, setTrack] = useState<TrackType>("rt");
+  const [scoreRaceFilter, setScoreRaceFilter] = useState<RaceFilter>("12");
+  const [rankRange, setRankRange] = useState<RangeFilter>("all");
+  const [live, setLive] = useState<LiveSnapshot | null>(null);
   const trackData = data.byTrack[track];
   const trackName = track.toUpperCase();
+  const rankYears = useMemo(
+    () => [...new Set(trackData.timeline.flatMap((row) => [row.start.slice(0, 4), row.end.slice(0, 4)]))]
+      .filter((year) => year >= "2021" && year <= "2026")
+      .sort(),
+    [trackData.timeline],
+  );
+  const rankWindow = useMemo(() => buildRankRange(trackData.timeline, rankRange), [trackData.timeline, rankRange]);
+  const scoreRows = trackData.topScoresByRace[scoreRaceFilter];
+  const lowScoreRows = trackData.lowScoresByRace[scoreRaceFilter];
+
+  async function refreshLiveStatus() {
+    try {
+      const response = await fetch("/api/live", { cache: "no-store" });
+      if (response.ok) {
+        setLive((await response.json()) as LiveSnapshot);
+      }
+    } catch {
+      setLive(null);
+    }
+  }
+
+  useEffect(() => {
+    void refreshLiveStatus();
+  }, []);
 
   return (
     <main>
@@ -427,6 +631,8 @@ export default function Dashboard({ data }: { data: DashboardData }) {
         />
       </section>
 
+      <LiveStatus live={live} onRefresh={refreshLiveStatus} />
+
       <div className="tab-shell">
         <div className="tabs" role="tablist" aria-label="Dashboard views">
           {tabs.map((tab) => (
@@ -451,19 +657,42 @@ export default function Dashboard({ data }: { data: DashboardData }) {
               <p className="eyebrow">{trackName} Rank 1 Over Time</p>
               <h2>Leader reigns reconstructed from event updates</h2>
             </div>
-            <span>{formatNumber(trackData.timeline.length)} lead segments</span>
+            <span>{formatNumber(rankWindow.timeline.length)} lead segments</span>
           </div>
-          <Timeline rows={trackData.timeline} />
+          <div className="panel-controls">
+            <SegmentedControl
+              label="Range"
+              onChange={setRankRange}
+              options={[
+                { value: "all", label: "All time" },
+                ...rankYears.map((year) => ({ value: year, label: year })),
+              ]}
+              value={rankRange}
+            />
+          </div>
+          <Timeline rows={rankWindow.timeline} />
           <div className="split-grid">
             <div>
-              <h3>Most Days at #1</h3>
-              <BarBoard rows={trackData.rankOneLeaderboard} suffix="d" />
+              <h3>Most Days at #1 · {rankWindow.label}</h3>
+              <BarBoard rows={rankWindow.leaderboard.slice(0, 14)} suffix="d" />
             </div>
             <div>
               <h3>Monthly Event Volume</h3>
               <div className="month-chart">
                 {trackData.volumeByMonth.map((row) => (
                   <div className="month-row" key={row.month}>
+                    <span>{row.label}</span>
+                    <div>
+                      <i style={{ width: `${row.pct}%` }} />
+                    </div>
+                    <b>{formatNumber(row.value)}</b>
+                  </div>
+                ))}
+              </div>
+              <h3 className="subchart-title">Events per Year</h3>
+              <div className="year-chart">
+                {trackData.volumeByYear.map((row) => (
+                  <div className="month-row" key={row.label}>
                     <span>{row.label}</span>
                     <div>
                       <i style={{ width: `${row.pct}%` }} />
@@ -486,27 +715,40 @@ export default function Dashboard({ data }: { data: DashboardData }) {
                 <h2>Most All-Time Events</h2>
               </div>
             </div>
-            <BarBoard rows={trackData.allEventCounts} />
+            <div className="scroll-board">
+              <BarBoard rows={trackData.allEventCounts} />
+            </div>
           </div>
 
           <div className="panel">
             <div className="panel-head compact">
               <div>
                 <p className="eyebrow">{trackName} Score Ceiling</p>
-                <h2>Highest Event Scores</h2>
+                <h2>Highest Event Scores · {scoreRaceFilter} Races</h2>
               </div>
             </div>
-            <ScoreTable rows={trackData.topScores.slice(0, 10)} mode="high" />
+            <div className="panel-controls">
+              <SegmentedControl
+                label="Format"
+                onChange={setScoreRaceFilter}
+                options={[
+                  { value: "12", label: "12 races" },
+                  { value: "32", label: "32 races" },
+                ]}
+                value={scoreRaceFilter}
+              />
+            </div>
+            <ScoreTable rows={scoreRows.slice(0, 10)} mode="high" />
           </div>
 
           <div className="panel">
             <div className="panel-head compact">
               <div>
                 <p className="eyebrow">{trackName} Score Floor</p>
-                <h2>Lowest Full Event Scores</h2>
+                <h2>Lowest Event Scores · {scoreRaceFilter} Races</h2>
               </div>
             </div>
-            <ScoreTable rows={trackData.lowScores.slice(0, 10)} mode="low" />
+            <ScoreTable rows={lowScoreRows.slice(0, 10)} mode="low" />
           </div>
         </section>
       )}
@@ -534,6 +776,11 @@ export default function Dashboard({ data }: { data: DashboardData }) {
                 <small>
                   return {row.returnScore} pts · {formatSigned(row.returnDelta)} MMR
                 </small>
+                {row.returnEventUrl ? (
+                  <a className="result-link return-link" href={row.returnEventUrl} rel="noreferrer" target="_blank">
+                    View return event
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>
