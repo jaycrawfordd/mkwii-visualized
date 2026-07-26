@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 
 type TrackType = "rt" | "ct";
 
@@ -55,10 +55,13 @@ type BreakRow = {
 };
 
 type CurrentTopRow = {
+  id?: string;
   name: string;
   ranking: number;
   currentMmr: number;
+  currentLr?: number;
   peakMmr: number;
+  peakLr?: number;
   totalEvents: number;
   averageScore: number;
   division: string;
@@ -67,7 +70,8 @@ type CurrentTopRow = {
 };
 
 type VolumeRow = {
-  month: string;
+  month?: string;
+  year?: string;
   label: string;
   value: number;
   pct: number;
@@ -76,6 +80,104 @@ type VolumeRow = {
 type DivisionRow = {
   name: string;
   value: number;
+};
+
+type CurrentLeaderboardRow = {
+  id: string;
+  name: string;
+  ranking: number;
+  currentMmr: number;
+  currentLr: number;
+  peakMmr: number;
+  peakLr: number;
+  totalEvents: number;
+  wins: number;
+  losses: number;
+  winPercentage: number;
+  averageScore: number;
+  topScore: number;
+  currentDivision: string;
+  currentClass: string;
+  url?: string;
+};
+
+type PlayerEventRow = {
+  eventId: string;
+  date: string;
+  tier: string;
+  format: string;
+  rank: number;
+  score: number;
+  races: number;
+  result: string;
+  changeMmr: number;
+  updatedMmr: number;
+  changeLr: number;
+  updatedLr: number;
+  url: string;
+};
+
+type PlayerProfile = CurrentLeaderboardRow & {
+  country: string;
+  controller: string;
+  lowestMmr: number;
+  lowestLr: number;
+  percentile: number;
+  maxGainMmr: number;
+  maxGainLr: number;
+  maxLossMmr: number;
+  maxLossLr: number;
+  gainloss10Mmr: number;
+  gainloss10Lr: number;
+  wins10: number;
+  loss10: number;
+  win10Percentage: number;
+  winStreak: number;
+  average10Score: number;
+  stdScore: number;
+  std10Score: number;
+  nosqWins: number;
+  nosqLosses: number;
+  nosqWinPercentage: number;
+  nosqMaxGainMmr: number;
+  nosqMaxGainLr: number;
+  nosqMaxLossMmr: number;
+  nosqMaxLossLr: number;
+  nosqGainloss10Mmr: number;
+  nosqGainloss10Lr: number;
+  nosqWins10: number;
+  nosqLoss10: number;
+  nosqAverageScore: number;
+  nosqAverage10Score: number;
+  nosqStdScore: number;
+  nosqStd10Score: number;
+  nosqTopScore: number;
+  nosqTotalEvents: number;
+  currentDivision: string;
+  currentClass: string;
+  lastEventDate: string;
+  updateDate: string;
+  ladderId: number;
+  trackType: TrackType;
+  events: PlayerEventRow[];
+};
+
+type SpotlightRow = {
+  id: string;
+  name: string;
+  value: number;
+  events?: number;
+  average10Score?: number;
+};
+
+type SeasonRange = {
+  ladderId: number;
+  label: string;
+  start: string;
+  end: string;
+  displayStart: string;
+  displayEnd: string;
+  eventCount: number;
 };
 
 type TrackData = {
@@ -96,14 +198,24 @@ type TrackData = {
     lowestScore: ScoreRow;
     rankOneKing: RankOneRow;
   };
+  seasonRanges: SeasonRange[];
   timeline: TimelineRow[];
   rankOneLeaderboard: RankOneRow[];
   currentTop: CurrentTopRow[];
+  currentLeaderboard: CurrentLeaderboardRow[];
+  playerProfiles: Record<string, PlayerProfile>;
+  currentSpotlights: {
+    bestAverageScore: SpotlightRow[];
+    bestWinRate: SpotlightRow[];
+    hottestLast10: SpotlightRow[];
+  };
   allEventCounts: Array<{ id: string; name: string; value: number; currentMmr: number }>;
   topScores: ScoreRow[];
   lowScores: ScoreRow[];
   topScoresByRace: Record<"12" | "32", ScoreRow[]>;
   lowScoresByRace: Record<"12" | "32", ScoreRow[]>;
+  biggestGains: ScoreRow[];
+  biggestLosses: ScoreRow[];
   breaks: BreakRow[];
   volumeByMonth: VolumeRow[];
   volumeByYear: VolumeRow[];
@@ -129,7 +241,8 @@ type DashboardData = {
   };
   playerCount: number;
   byTrack: Record<TrackType, TrackData>;
-  rtGrandmasters: RtGrandmaster[];
+  grandmastersByTrack: Record<TrackType, RtGrandmaster[]>;
+  rtGrandmasters?: RtGrandmaster[];
 };
 
 type LiveSnapshot = {
@@ -147,7 +260,7 @@ type LiveSnapshot = {
   >;
 };
 
-const tabs = ["Overview", "Rank 1", "Records", "Returns", "RT GMs"] as const;
+const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights"] as const;
 type Tab = (typeof tabs)[number];
 type RaceFilter = "12" | "32";
 type RangeFilter = "all" | string;
@@ -160,6 +273,13 @@ function formatNumber(value: number) {
 
 function formatSigned(value = 0) {
   return `${value > 0 ? "+" : ""}${formatNumber(value)}`;
+}
+
+function formatDecimal(value = 0, digits = 1) {
+  return Number(value).toLocaleString("en-US", {
+    maximumFractionDigits: digits,
+    minimumFractionDigits: digits,
+  });
 }
 
 function shortDate(value: string) {
@@ -179,6 +299,28 @@ function yearRange(year: string) {
   const start = Date.parse(`${year}-01-01T00:00:00Z`);
   const end = Date.parse(`${Number(year) + 1}-01-01T00:00:00Z`);
   return { start, end };
+}
+
+function namedRange(range: RangeFilter, seasons: SeasonRange[]) {
+  if (range === "all") {
+    return null;
+  }
+  if (range.startsWith("season:")) {
+    const ladderId = Number(range.replace("season:", ""));
+    const season = seasons.find((item) => item.ladderId === ladderId);
+    if (!season) {
+      return null;
+    }
+    return {
+      start: dateMs(season.start),
+      end: dateMs(season.end) + dayMs,
+      label: `${season.label} · ${season.displayStart} to ${season.displayEnd}`,
+    };
+  }
+  return {
+    ...yearRange(range),
+    label: range,
+  };
 }
 
 function formatCheckedAt(value: string) {
@@ -331,9 +473,60 @@ function ScoreTable({ rows, mode }: { rows: ScoreRow[]; mode: "high" | "low" }) 
   );
 }
 
+function MmrMoveTable({ gains, losses }: { gains: ScoreRow[]; losses: ScoreRow[] }) {
+  const rows = [
+    ...gains.map((row) => ({ ...row, direction: "Gain" })),
+    ...losses.map((row) => ({ ...row, direction: "Loss" })),
+  ];
+
+  return (
+    <div className="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Player</th>
+            <th>MMR +/-</th>
+            <th>Score</th>
+            <th>Races</th>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr key={`${row.direction}-${row.eventId}-${row.id}-${index}`}>
+              <td>{row.direction}</td>
+              <td>{row.name}</td>
+              <td className={(row.mmrDelta ?? 0) >= 0 ? "positive" : "danger"}>{formatSigned(row.mmrDelta)}</td>
+              <td>{row.value}</td>
+              <td>{row.races}</td>
+              <td>
+                {row.type} <small>{row.tier}</small>
+              </td>
+              <td>{row.date ? shortDate(row.date) : "-"}</td>
+              <td>
+                {row.eventUrl ? (
+                  <a className="result-link" href={row.eventUrl} rel="noreferrer" target="_blank">
+                    View
+                  </a>
+                ) : (
+                  "-"
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function buildRankRange(
   rows: TimelineRow[],
   range: RangeFilter,
+  seasons: SeasonRange[],
 ): { timeline: TimelineRow[]; leaderboard: RankOneRow[]; label: string } {
   if (range === "all") {
     const leaderboard = new Map<string, RankOneRow>();
@@ -357,7 +550,12 @@ function buildRankRange(
     };
   }
 
-  const { start, end } = yearRange(range);
+  const selectedRange = namedRange(range, seasons);
+  if (!selectedRange) {
+    return buildRankRange(rows, "all", seasons);
+  }
+
+  const { start, end, label } = selectedRange;
   const visible = rows
     .map((row) => {
       const rowStart = dateMs(row.start);
@@ -399,7 +597,7 @@ function buildRankRange(
   return {
     timeline: visible,
     leaderboard: [...leaderboard.values()].sort((a, b) => b.days - a.days || b.peakMmr - a.peakMmr),
-    label: range,
+    label,
   };
 }
 
@@ -496,7 +694,7 @@ function LiveStatus({ live, onRefresh }: { live: LiveSnapshot | null; onRefresh:
   );
 }
 
-function GrandmasterTable({ rows }: { rows: RtGrandmaster[] }) {
+function GrandmasterTable({ rows, trackName }: { rows: RtGrandmaster[]; trackName: string }) {
   return (
     <div className="table-wrap">
       <table>
@@ -520,7 +718,9 @@ function GrandmasterTable({ rows }: { rows: RtGrandmaster[] }) {
               <td className="positive">{formatNumber(row.peakMmr)}</td>
               <td>{formatNumber(row.peakLr)}</td>
               <td>{row.firstHit}</td>
-              <td>RT S{row.firstSeason}</td>
+              <td>
+                {trackName} S{row.firstSeason}
+              </td>
               <td>{row.evidence}</td>
               <td>
                 <a className="result-link" href={row.url} rel="noreferrer" target="_blank">
@@ -535,23 +735,278 @@ function GrandmasterTable({ rows }: { rows: RtGrandmaster[] }) {
   );
 }
 
-export default function Dashboard({ data }: { data: DashboardData }) {
+function MiniStat({ label, value }: { label: string; value: string | number }) {
+  return (
+    <div className="mini-stat">
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function ProfileStatBlock({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="profile-stat-block">
+      <h3>{title}</h3>
+      <div className="mini-stat-grid">{children}</div>
+    </div>
+  );
+}
+
+function PlayerProfilePanel({ profile }: { profile: PlayerProfile | null }) {
+  if (!profile) {
+    return (
+      <div className="player-empty">
+        Select a player from the leaderboard to open their current-season profile and event log.
+      </div>
+    );
+  }
+
+  return (
+    <div className="player-profile">
+      <div className="profile-head">
+        <div>
+          <p className="eyebrow">
+            #{profile.ranking} · {profile.trackType.toUpperCase()} S{profile.ladderId}
+          </p>
+          <h2>{profile.name}</h2>
+          <span>
+            {profile.currentDivision} · {profile.currentClass}
+          </span>
+        </div>
+        <a className="result-link" href={profile.url} rel="noreferrer" target="_blank">
+          Profile
+        </a>
+      </div>
+
+      <div className="profile-grid">
+        <ProfileStatBlock title="All Events">
+          <MiniStat label="Wins" value={formatNumber(profile.wins)} />
+          <MiniStat label="Losses" value={formatNumber(profile.losses)} />
+          <MiniStat label="Win %" value={`${formatDecimal(profile.winPercentage)}%`} />
+          <MiniStat label="Max LR Gain" value={formatSigned(profile.maxGainLr)} />
+          <MiniStat label="Max LR Loss" value={formatSigned(profile.maxLossLr)} />
+          <MiniStat label="LR" value={formatNumber(profile.currentLr)} />
+          <MiniStat label="MMR" value={formatNumber(profile.currentMmr)} />
+          <MiniStat label="Avg Score" value={formatDecimal(profile.averageScore)} />
+          <MiniStat label="Std Dev Score" value={formatDecimal(profile.stdScore)} />
+          <MiniStat label="Top Score" value={formatNumber(profile.topScore)} />
+          <MiniStat label="Events" value={formatNumber(profile.totalEvents)} />
+        </ProfileStatBlock>
+
+        <ProfileStatBlock title="Last 10">
+          <MiniStat label="Win Streak" value={formatSigned(profile.winStreak)} />
+          <MiniStat label="Wins" value={formatNumber(profile.wins10)} />
+          <MiniStat label="Losses" value={formatNumber(profile.loss10)} />
+          <MiniStat label="Average" value={formatDecimal(profile.average10Score)} />
+          <MiniStat label="Std Dev" value={formatDecimal(profile.std10Score)} />
+          <MiniStat label="MMR +/-" value={formatSigned(profile.gainloss10Mmr)} />
+          <MiniStat label="LR +/-" value={formatSigned(profile.gainloss10Lr)} />
+        </ProfileStatBlock>
+
+        <ProfileStatBlock title="No Squad Queue Events">
+          <MiniStat label="Wins" value={formatNumber(profile.nosqWins)} />
+          <MiniStat label="Losses" value={formatNumber(profile.nosqLosses)} />
+          <MiniStat label="Win %" value={`${formatDecimal(profile.nosqWinPercentage)}%`} />
+          <MiniStat label="Max LR Gain" value={formatSigned(profile.nosqMaxGainLr)} />
+          <MiniStat label="Max LR Loss" value={formatSigned(profile.nosqMaxLossLr)} />
+          <MiniStat label="Avg Score" value={formatDecimal(profile.nosqAverageScore)} />
+          <MiniStat label="Std Dev Score" value={formatDecimal(profile.nosqStdScore)} />
+          <MiniStat label="Top Score" value={formatNumber(profile.nosqTopScore)} />
+          <MiniStat label="Events" value={formatNumber(profile.nosqTotalEvents)} />
+        </ProfileStatBlock>
+
+        <ProfileStatBlock title="No SQ Last 10">
+          <MiniStat label="Wins" value={formatNumber(profile.nosqWins10)} />
+          <MiniStat label="Losses" value={formatNumber(profile.nosqLoss10)} />
+          <MiniStat label="Average" value={formatDecimal(profile.nosqAverage10Score)} />
+          <MiniStat label="Std Dev" value={formatDecimal(profile.nosqStd10Score)} />
+          <MiniStat label="MMR +/-" value={formatSigned(profile.nosqGainloss10Mmr)} />
+          <MiniStat label="LR +/-" value={formatSigned(profile.nosqGainloss10Lr)} />
+        </ProfileStatBlock>
+      </div>
+
+      <div className="table-wrap profile-events">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Tier</th>
+              <th>Format</th>
+              <th>Rank</th>
+              <th>Score</th>
+              <th>Races Played</th>
+              <th>Result</th>
+              <th>MMR +/-</th>
+              <th>MMR</th>
+              <th>LR +/-</th>
+              <th>LR</th>
+              <th>Event</th>
+            </tr>
+          </thead>
+          <tbody>
+            {profile.events.map((event, index) => (
+              <tr key={`${event.eventId}-${index}`}>
+                <td>{index + 1}</td>
+                <td>{shortDate(event.date)}</td>
+                <td>{event.tier}</td>
+                <td>{event.format}</td>
+                <td>{event.rank}</td>
+                <td>{event.score}</td>
+                <td>{event.races}</td>
+                <td className={event.result === "Win" ? "positive" : ""}>{event.result}</td>
+                <td className={event.changeMmr >= 0 ? "positive" : "danger"}>{formatSigned(event.changeMmr)}</td>
+                <td>{formatNumber(event.updatedMmr)}</td>
+                <td className={event.changeLr >= 0 ? "positive" : "danger"}>{formatSigned(event.changeLr)}</td>
+                <td>{formatNumber(event.updatedLr)}</td>
+                <td>
+                  <a className="result-link" href={event.url} rel="noreferrer" target="_blank">
+                    View
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function PlayerLeaderboard({
+  rows,
+  selectedId,
+  onSelect,
+}: {
+  rows: CurrentLeaderboardRow[];
+  selectedId: string | null;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <div className="table-wrap leaderboard-table">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>LR</th>
+            <th>MMR</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Win %</th>
+            <th>Avg</th>
+            <th>Top</th>
+            <th>Events</th>
+            <th>Division</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr
+              className={selectedId === row.id ? "selected" : ""}
+              key={row.id}
+              onClick={() => onSelect(row.id)}
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  onSelect(row.id);
+                }
+              }}
+            >
+              <td>{row.ranking}</td>
+              <td>{row.name}</td>
+              <td className="positive">{formatNumber(row.currentLr)}</td>
+              <td>{formatNumber(row.currentMmr)}</td>
+              <td>{formatNumber(row.wins)}</td>
+              <td>{formatNumber(row.losses)}</td>
+              <td>{formatDecimal(row.winPercentage)}%</td>
+              <td>{formatDecimal(row.averageScore)}</td>
+              <td>{formatNumber(row.topScore)}</td>
+              <td>{formatNumber(row.totalEvents)}</td>
+              <td>
+                {row.currentDivision} <small>{row.currentClass}</small>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function SpotlightList({ rows, suffix = "" }: { rows: SpotlightRow[]; suffix?: string }) {
+  return (
+    <div className="spotlight-list">
+      {rows.map((row, index) => (
+        <div className="spotlight-row" key={`${row.id}-${index}`}>
+          <span>{index + 1}</span>
+          <strong>{row.name}</strong>
+          <b>
+            {formatNumber(row.value)}
+            {suffix}
+          </b>
+          {row.events ? <small>{formatNumber(row.events)} events</small> : null}
+          {row.average10Score ? <small>{formatDecimal(row.average10Score)} avg last 10</small> : null}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function DashboardLoaded({ data }: { data: DashboardData }) {
   const [activeTab, setActiveTab] = useState<Tab>("Overview");
   const [track, setTrack] = useState<TrackType>("rt");
-  const [scoreRaceFilter, setScoreRaceFilter] = useState<RaceFilter>("12");
+  const [topRaceFilter, setTopRaceFilter] = useState<RaceFilter>("12");
+  const [lowRaceFilter, setLowRaceFilter] = useState<RaceFilter>("32");
   const [rankRange, setRankRange] = useState<RangeFilter>("all");
+  const [leaderboardQuery, setLeaderboardQuery] = useState("");
+  const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(null);
   const [live, setLive] = useState<LiveSnapshot | null>(null);
   const trackData = data.byTrack[track];
   const trackName = track.toUpperCase();
+  const grandmasters = data.grandmastersByTrack?.[track] ?? (track === "rt" ? data.rtGrandmasters ?? [] : []);
   const rankYears = useMemo(
     () => [...new Set(trackData.timeline.flatMap((row) => [row.start.slice(0, 4), row.end.slice(0, 4)]))]
       .filter((year) => year >= "2021" && year <= "2026")
       .sort(),
     [trackData.timeline],
   );
-  const rankWindow = useMemo(() => buildRankRange(trackData.timeline, rankRange), [trackData.timeline, rankRange]);
-  const scoreRows = trackData.topScoresByRace[scoreRaceFilter];
-  const lowScoreRows = trackData.lowScoresByRace[scoreRaceFilter];
+  const seasonOptions = useMemo(
+    () =>
+      trackData.seasonRanges
+        .slice()
+        .sort((a, b) => b.ladderId - a.ladderId)
+        .map((season) => ({
+          value: `season:${season.ladderId}`,
+          label: `S${season.ladderId}`,
+        })),
+    [trackData.seasonRanges],
+  );
+  const rankWindow = useMemo(
+    () => buildRankRange(trackData.timeline, rankRange, trackData.seasonRanges),
+    [trackData.timeline, trackData.seasonRanges, rankRange],
+  );
+  const scoreRows = trackData.topScoresByRace[topRaceFilter];
+  const lowScoreRows = trackData.lowScoresByRace[lowRaceFilter];
+  const filteredLeaderboard = useMemo(() => {
+    const query = leaderboardQuery.trim().toLowerCase();
+    if (!query) {
+      return trackData.currentLeaderboard;
+    }
+    return trackData.currentLeaderboard.filter((row) => row.name.toLowerCase().includes(query));
+  }, [leaderboardQuery, trackData.currentLeaderboard]);
+  const selectedProfile = useMemo(() => {
+    const fallbackId = filteredLeaderboard[0]?.id ?? trackData.currentLeaderboard[0]?.id ?? null;
+    return trackData.playerProfiles[selectedPlayerId ?? fallbackId] ?? null;
+  }, [filteredLeaderboard, selectedPlayerId, trackData.currentLeaderboard, trackData.playerProfiles]);
+
+  function changeTrack(nextTrack: TrackType) {
+    setTrack(nextTrack);
+    setRankRange("all");
+    setLeaderboardQuery("");
+    setSelectedPlayerId(null);
+  }
 
   async function refreshLiveStatus() {
     try {
@@ -601,7 +1056,7 @@ export default function Dashboard({ data }: { data: DashboardData }) {
             <p className="eyebrow">
               {trackName} · Ladder {trackData.meta.currentLadderId}
             </p>
-            <TrackSwitch track={track} onTrackChange={setTrack} />
+            <TrackSwitch track={track} onTrackChange={changeTrack} />
           </div>
           <h1>MKW Lounge All-Time Ladder Lab</h1>
           <p>
@@ -644,7 +1099,7 @@ export default function Dashboard({ data }: { data: DashboardData }) {
               role="tab"
               type="button"
             >
-              {tab}
+              {tab === "GMs" ? `${trackName} GMs` : tab}
             </button>
           ))}
         </div>
@@ -666,6 +1121,7 @@ export default function Dashboard({ data }: { data: DashboardData }) {
               options={[
                 { value: "all", label: "All time" },
                 ...rankYears.map((year) => ({ value: year, label: year })),
+                ...seasonOptions,
               ]}
               value={rankRange}
             />
@@ -724,18 +1180,18 @@ export default function Dashboard({ data }: { data: DashboardData }) {
             <div className="panel-head compact">
               <div>
                 <p className="eyebrow">{trackName} Score Ceiling</p>
-                <h2>Highest Event Scores · {scoreRaceFilter} Races</h2>
+                <h2>Highest Event Scores · {topRaceFilter} Races</h2>
               </div>
             </div>
             <div className="panel-controls">
               <SegmentedControl
                 label="Format"
-                onChange={setScoreRaceFilter}
+                onChange={setTopRaceFilter}
                 options={[
                   { value: "12", label: "12 races" },
                   { value: "32", label: "32 races" },
                 ]}
-                value={scoreRaceFilter}
+                value={topRaceFilter}
               />
             </div>
             <ScoreTable rows={scoreRows.slice(0, 10)} mode="high" />
@@ -745,61 +1201,110 @@ export default function Dashboard({ data }: { data: DashboardData }) {
             <div className="panel-head compact">
               <div>
                 <p className="eyebrow">{trackName} Score Floor</p>
-                <h2>Lowest Event Scores · {scoreRaceFilter} Races</h2>
+                <h2>Lowest Event Scores · {lowRaceFilter} Races</h2>
               </div>
+            </div>
+            <div className="panel-controls">
+              <SegmentedControl
+                label="Format"
+                onChange={setLowRaceFilter}
+                options={[
+                  { value: "12", label: "12 races" },
+                  { value: "32", label: "32 races" },
+                ]}
+                value={lowRaceFilter}
+              />
             </div>
             <ScoreTable rows={lowScoreRows.slice(0, 10)} mode="low" />
           </div>
         </section>
       )}
 
-      {(activeTab === "Overview" || activeTab === "Returns") && (
+      {activeTab === "Leaderboard" && (
+        <section className="panel wide" id="leaderboard">
+          <div className="panel-head">
+            <div>
+              <p className="eyebrow">{trackName} Current Season</p>
+              <h2>Full Player Leaderboard</h2>
+            </div>
+            <span>{formatNumber(trackData.currentLeaderboard.length)} ranked players</span>
+          </div>
+          <div className="leaderboard-tools">
+            <input
+              aria-label="Search player leaderboard"
+              onChange={(event) => setLeaderboardQuery(event.target.value)}
+              placeholder="Search player..."
+              type="search"
+              value={leaderboardQuery}
+            />
+          </div>
+          <PlayerLeaderboard
+            rows={filteredLeaderboard}
+            selectedId={selectedProfile?.id ?? null}
+            onSelect={setSelectedPlayerId}
+          />
+          <PlayerProfilePanel profile={selectedProfile} />
+        </section>
+      )}
+
+      {(activeTab === "Overview" || activeTab === "GMs") && (
         <section className="panel wide">
           <div className="panel-head">
             <div>
-              <p className="eyebrow">{trackName} Comebacks</p>
-              <h2>Longest Break Before Returning</h2>
+              <p className="eyebrow">{trackName} Grandmaster</p>
+              <h2>Players Who Hit {trackName} Grandmaster All Time</h2>
             </div>
-            <span>{formatNumber(trackData.summary.longestBreak.days)} day record</span>
+            <span>{formatNumber(grandmasters.length)} players</span>
           </div>
-          <div className="return-list">
-            {trackData.breaks.map((row, index) => (
-              <article className="return-row" key={`${row.id}-${row.to}-${index}`}>
-                <div className="return-rank">{index + 1}</div>
-                <div>
-                  <strong>{row.name}</strong>
-                  <span>
-                    {row.from} to {row.to} · {row.trackType.toUpperCase()} S{row.ladderId}
-                  </span>
-                </div>
-                <b>{formatNumber(row.days)} days</b>
-                <small>
-                  return {row.returnScore} pts · {formatSigned(row.returnDelta)} MMR
-                </small>
-                {row.returnEventUrl ? (
-                  <a className="result-link return-link" href={row.returnEventUrl} rel="noreferrer" target="_blank">
-                    View return event
-                  </a>
-                ) : null}
-              </article>
-            ))}
+          <GrandmasterTable rows={grandmasters} trackName={trackName} />
+        </section>
+      )}
+
+      {(activeTab === "Overview" || activeTab === "Insights") && (
+        <section className="insights-grid">
+          <div className="panel">
+            <div className="panel-head compact">
+              <div>
+                <p className="eyebrow">{trackName} Consistency</p>
+                <h2>Best Average Score</h2>
+              </div>
+            </div>
+            <SpotlightList rows={trackData.currentSpotlights.bestAverageScore} />
+          </div>
+
+          <div className="panel">
+            <div className="panel-head compact">
+              <div>
+                <p className="eyebrow">{trackName} Conversion</p>
+                <h2>Best Win Rate</h2>
+              </div>
+            </div>
+            <SpotlightList rows={trackData.currentSpotlights.bestWinRate} suffix="%" />
+          </div>
+
+          <div className="panel">
+            <div className="panel-head compact">
+              <div>
+                <p className="eyebrow">{trackName} Last 10</p>
+                <h2>Hottest Recent Runs</h2>
+              </div>
+            </div>
+            <SpotlightList rows={trackData.currentSpotlights.hottestLast10} />
+          </div>
+
+          <div className="panel">
+            <div className="panel-head compact">
+              <div>
+                <p className="eyebrow">{trackName} Swings</p>
+                <h2>Biggest Event MMR Moves</h2>
+              </div>
+            </div>
+            <MmrMoveTable gains={trackData.biggestGains.slice(0, 5)} losses={trackData.biggestLosses.slice(0, 5)} />
           </div>
         </section>
       )}
 
-      {(activeTab === "Overview" || activeTab === "RT GMs") && (
-        <section className="panel wide">
-          <div className="panel-head">
-            <div>
-              <p className="eyebrow">RT Grandmaster</p>
-              <h2>Players Who Hit RT Grandmaster All Time</h2>
-            </div>
-            <span>{formatNumber(data.rtGrandmasters.length)} players</span>
-          </div>
-          <GrandmasterTable rows={data.rtGrandmasters} />
-        </section>
-      )}
-
+      {activeTab === "Overview" && (
       <section className="bottom-grid" id="current">
         <div className="panel">
           <div className="panel-head compact">
@@ -860,6 +1365,41 @@ export default function Dashboard({ data }: { data: DashboardData }) {
           <BarBoard rows={trackData.divisionSpread} />
         </div>
       </section>
+      )}
+
+      {(activeTab === "Overview" || activeTab === "Insights") && (
+        <section className="panel wide">
+          <div className="panel-head">
+            <div>
+              <p className="eyebrow">{trackName} Comebacks</p>
+              <h2>Longest Break Before Returning</h2>
+            </div>
+            <span>{formatNumber(trackData.summary.longestBreak.days)} day record</span>
+          </div>
+          <div className="return-list">
+            {trackData.breaks.map((row, index) => (
+              <article className="return-row" key={`${row.id}-${row.to}-${index}`}>
+                <div className="return-rank">{index + 1}</div>
+                <div>
+                  <strong>{row.name}</strong>
+                  <span>
+                    {row.from} to {row.to} · {row.trackType.toUpperCase()} S{row.ladderId}
+                  </span>
+                </div>
+                <b>{formatNumber(row.days)} days</b>
+                <small>
+                  return {row.returnScore} pts · {formatSigned(row.returnDelta)} MMR
+                </small>
+                {row.returnEventUrl ? (
+                  <a className="result-link return-link" href={row.returnEventUrl} rel="noreferrer" target="_blank">
+                    View return event
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <footer>
         Data snapshot from MKW Lounge: {data.meta.sourceTimestamp}. Rank-one history uses exported event MMR updates
@@ -868,4 +1408,73 @@ export default function Dashboard({ data }: { data: DashboardData }) {
       </footer>
     </main>
   );
+}
+
+function LoadingDashboard() {
+  return (
+    <main>
+      <div className="earth-content">
+        <div id="earth" />
+      </div>
+      <nav className="lounge-nav" aria-label="MKW Lounge dashboard navigation">
+        <a className="nav-brand" href="https://mkwlounge.gg/ladder/index.php?ladder_id=19&hide_unranked=0">
+          MKW Lounge
+        </a>
+        <a href="#rank-one">
+          <img alt="" src="/history.svg" />
+          Rank 1
+        </a>
+        <a href="#records">
+          <img alt="" src="/statistics.svg" />
+          Records
+        </a>
+      </nav>
+      <section className="hero-section">
+        <div className="hero-copy">
+          <p className="eyebrow">RT · CT</p>
+          <h1>MKW Lounge All-Time Ladder Lab</h1>
+          <p>Loading the all-time ladder export and current-season leaderboards.</p>
+        </div>
+        <div className="rank-one-card">
+          <span>Data snapshot</span>
+          <strong>Loading</strong>
+          <div>Fetching stats from the generated dashboard dataset.</div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export default function Dashboard({ data: initialData }: { data?: DashboardData }) {
+  const [data, setData] = useState<DashboardData | null>(initialData ?? null);
+
+  useEffect(() => {
+    if (initialData) {
+      return;
+    }
+
+    let mounted = true;
+    void fetch("/dashboard-data.json", { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((nextData) => {
+        if (mounted && nextData) {
+          setData(nextData as DashboardData);
+        }
+      })
+      .catch(() => {
+        if (mounted) {
+          setData(null);
+        }
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, [initialData]);
+
+  if (!data) {
+    return <LoadingDashboard />;
+  }
+
+  return <DashboardLoaded data={data} />;
 }
