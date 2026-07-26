@@ -260,7 +260,7 @@ type LiveSnapshot = {
   >;
 };
 
-const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights"] as const;
+const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights", "Credits"] as const;
 type Tab = (typeof tabs)[number];
 type RaceFilter = "12" | "32";
 type RangeFilter = "all" | string;
@@ -935,7 +935,17 @@ function PlayerLeaderboard({
   );
 }
 
-function SpotlightList({ rows, suffix = "" }: { rows: SpotlightRow[]; suffix?: string }) {
+function SpotlightList({
+  rows,
+  suffix = "",
+  valueLabel,
+  signed = false,
+}: {
+  rows: SpotlightRow[];
+  suffix?: string;
+  valueLabel?: string;
+  signed?: boolean;
+}) {
   return (
     <div className="spotlight-list">
       {rows.map((row, index) => (
@@ -943,14 +953,51 @@ function SpotlightList({ rows, suffix = "" }: { rows: SpotlightRow[]; suffix?: s
           <span>{index + 1}</span>
           <strong>{row.name}</strong>
           <b>
-            {formatNumber(row.value)}
+            {signed ? formatSigned(row.value) : formatNumber(row.value)}
             {suffix}
           </b>
+          {valueLabel ? <small>{valueLabel}</small> : null}
           {row.events ? <small>{formatNumber(row.events)} events</small> : null}
           {row.average10Score ? <small>{formatDecimal(row.average10Score)} avg last 10</small> : null}
         </div>
       ))}
     </div>
+  );
+}
+
+function CreditsPanel({ sourceTimestamp }: { sourceTimestamp: string }) {
+  return (
+    <section className="panel wide credits-panel">
+      <div className="panel-head">
+        <div>
+          <p className="eyebrow">Credits</p>
+          <h2>Data, sourcing, and build credits</h2>
+        </div>
+      </div>
+      <div className="credits-grid">
+        <article>
+          <h3>MKW Lounge Data</h3>
+          <p>
+            All ladder data, player records, event exports, ranks, MMR/LR values, and event result links are sourced
+            from MKW Lounge. This dashboard is an independent visualization layer built on top of those public exports.
+          </p>
+          <a className="result-link" href="https://www.mkwlounge.gg/" rel="noreferrer" target="_blank">
+            Open MKW Lounge
+          </a>
+        </article>
+        <article>
+          <h3>MKWii Lounge Discord</h3>
+          <p>Join the MKWii Lounge community through the official Discord invite.</p>
+          <a className="result-link" href="https://discord.gg/mkw" rel="noreferrer" target="_blank">
+            Join Discord
+          </a>
+        </article>
+        <article>
+          <h3>Website</h3>
+          <p>Website created by Jay. Data snapshot shown here: {sourceTimestamp}.</p>
+        </article>
+      </div>
+    </section>
   );
 }
 
@@ -1287,9 +1334,14 @@ function DashboardLoaded({ data }: { data: DashboardData }) {
               <div>
                 <p className="eyebrow">{trackName} Last 10</p>
                 <h2>Hottest Recent Runs</h2>
+                <p className="panel-note">Ranked by net MMR gained over each player&apos;s last 10 current-season events.</p>
               </div>
             </div>
-            <SpotlightList rows={trackData.currentSpotlights.hottestLast10} />
+            <SpotlightList
+              rows={trackData.currentSpotlights.hottestLast10}
+              signed
+              valueLabel="Last 10 MMR +/-"
+            />
           </div>
 
           <div className="panel">
@@ -1401,10 +1453,11 @@ function DashboardLoaded({ data }: { data: DashboardData }) {
         </section>
       )}
 
+      {activeTab === "Credits" && <CreditsPanel sourceTimestamp={data.meta.sourceTimestamp} />}
+
       <footer>
         Data snapshot from MKW Lounge: {data.meta.sourceTimestamp}. Rank-one history uses exported event MMR updates
-        and resets within each ladder season; RT Grandmaster includes exported RT Grandmaster division rows and RT MMR
-        hits at or above 14,000.
+        and resets within each ladder season. All ladder exports and event result links are sourced from MKW Lounge.
       </footer>
     </main>
   );
