@@ -1,15 +1,17 @@
+import { currentLadderIds } from "../../generated-ladders";
+
 type TrackType = "rt" | "ct";
 
 const tracks: Record<TrackType, { label: string; ladderId: number; pageUrl: string }> = {
   rt: {
     label: "Retro Tracks",
-    ladderId: 19,
-    pageUrl: "https://mkwlounge.gg/ladder/data.php?ladder_id=19",
+    ladderId: currentLadderIds.rt,
+    pageUrl: `https://mkwlounge.gg/ladder/data.php?ladder_id=${currentLadderIds.rt}`,
   },
   ct: {
     label: "Custom Tracks",
-    ladderId: 20,
-    pageUrl: "https://mkwlounge.gg/ladder/data.php?ladder_id=20",
+    ladderId: currentLadderIds.ct,
+    pageUrl: `https://mkwlounge.gg/ladder/data.php?ladder_id=${currentLadderIds.ct}`,
   },
 };
 

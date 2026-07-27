@@ -40,10 +40,17 @@ test("server-renders the MKW Lounge dashboard", async () => {
 test("ships the generated all-time ladder summary", async () => {
   const data = JSON.parse(await readFile(new URL("../public/dashboard-data.json", import.meta.url), "utf8"));
 
-  assert.equal(data.meta.loadedLadders.length, 20);
-  assert.equal(data.byTrack.rt.summary.eventCount, 92986);
-  assert.equal(data.byTrack.rt.summary.currentRankOne.name, "Kasperinos");
-  assert.equal(data.byTrack.ct.summary.currentRankOne.name, "TCR");
+  assert.ok(data.meta.loadedLadders.length >= 20);
+  assert.deepEqual(
+    data.meta.loadedLadders,
+    Array.from({ length: data.meta.loadedLadders.length }, (_, index) => index + 1),
+  );
+  assert.ok(data.byTrack.rt.summary.eventCount > 90000);
+  assert.ok(data.byTrack.ct.summary.eventCount > 15000);
+  assert.equal(data.byTrack.rt.summary.currentRankOne.ranking, 1);
+  assert.equal(data.byTrack.ct.summary.currentRankOne.ranking, 1);
+  assert.ok(data.byTrack.rt.summary.currentRankOne.name.length > 0);
+  assert.ok(data.byTrack.ct.summary.currentRankOne.name.length > 0);
   assert.ok(data.byTrack.rt.timeline.length > 400);
   assert.ok(data.byTrack.ct.timeline.length > 250);
   assert.ok(data.byTrack.rt.topScores[0].eventUrl.includes("table.php"));
