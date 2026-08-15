@@ -11,7 +11,7 @@
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "data:discover": "node work/discover-ladders.mjs",
     "data:download": "node work/download-ladders.mjs",
-    "data:build": "node work/build-dashboard-data.mjs",
+    "data:build": "node work/build-dashboard-data.mjs && node work/build-almia-upper-data.mjs",
     "data:refresh": "npm run data:discover && npm run data:download && npm run data:build",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",

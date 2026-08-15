@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode, useEffect, useMemo, useState } from "react";
+import AlmiaUpperDashboard, { type AlmiaUpperData } from "./AlmiaUpperDashboard";
 
 type TrackType = "rt" | "ct";
 
@@ -260,7 +261,7 @@ type LiveSnapshot = {
   >;
 };
 
-const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights"] as const;
+const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights", "Almia Upper Result"] as const;
 type Tab = (typeof tabs)[number];
 type RaceFilter = "12" | "32";
 type RangeFilter = "all" | string;
@@ -1001,7 +1002,7 @@ function CreditsPanel({ sourceTimestamp }: { sourceTimestamp: string }) {
   );
 }
 
-function DashboardLoaded({ data }: { data: DashboardData }) {
+function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpperData | null }) {
   const [activeTab, setActiveTab] = useState<Tab>("Overview");
   const [track, setTrack] = useState<TrackType>("rt");
   const [topRaceFilter, setTopRaceFilter] = useState<RaceFilter>("12");
@@ -1067,7 +1068,22 @@ function DashboardLoaded({ data }: { data: DashboardData }) {
   }
 
   useEffect(() => {
-    void refreshLiveStatus();
+    let cancelled = false;
+    void fetch("/api/live", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() as Promise<LiveSnapshot> : null)
+      .then((snapshot) => {
+        if (!cancelled && snapshot) {
+          setLive(snapshot);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setLive(null);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
@@ -1155,6 +1171,8 @@ function DashboardLoaded({ data }: { data: DashboardData }) {
           ))}
         </div>
       </div>
+
+      {activeTab === "Almia Upper Result" && <AlmiaUpperDashboard data={almia} />}
 
       {(activeTab === "Overview" || activeTab === "Rank 1") && (
         <section className="panel wide" id="rank-one">
@@ -1508,18 +1526,19 @@ function LoadingDashboard() {
 
 export default function Dashboard({ data: initialData }: { data?: DashboardData }) {
   const [data, setData] = useState<DashboardData | null>(initialData ?? null);
+  const [almia, setAlmia] = useState<AlmiaUpperData | null>(null);
 
   useEffect(() => {
-    if (initialData) {
-      return;
-    }
-
     let mounted = true;
-    void fetch("/dashboard-data.json", { cache: "no-store" })
-      .then((response) => (response.ok ? response.json() : null))
-      .then((nextData) => {
-        if (mounted && nextData) {
-          setData(nextData as DashboardData);
+    const dashboardRequest = initialData
+      ? Promise.resolve(initialData)
+      : fetch("/dashboard-data.json", { cache: "no-store" }).then((response) => response.ok ? response.json() : null);
+    const tournamentRequest = fetch("/almia-upper-data.json", { cache: "no-store" }).then((response) => response.ok ? response.json() : null);
+    void Promise.all([dashboardRequest, tournamentRequest])
+      .then(([nextData, tournamentData]) => {
+        if (mounted) {
+          if (nextData) setData(nextData as DashboardData);
+          if (tournamentData) setAlmia(tournamentData as AlmiaUpperData);
         }
       })
       .catch(() => {
@@ -1537,5 +1556,5 @@ export default function Dashboard({ data: initialData }: { data?: DashboardData 
     return <LoadingDashboard />;
   }
 
-  return <DashboardLoaded data={data} />;
+  return <DashboardLoaded almia={almia} data={data} />;
 }

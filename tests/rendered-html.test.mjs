@@ -70,3 +70,29 @@ test("ships the generated all-time ladder summary", async () => {
   assert.ok(data.grandmastersByTrack.ct.length > 10);
   assert.ok(data.rtGrandmasters.length > 25);
 });
+
+test("ships the complete Almia Upper tournament analysis", async () => {
+  const data = JSON.parse(await readFile(new URL("../public/almia-upper-data.json", import.meta.url), "utf8"));
+
+  assert.equal(data.meta.ratingCutoff, "2026-08-15T16:01:00Z");
+  assert.equal(data.summary.registeredPlayers, 85);
+  assert.equal(data.summary.competitors, 84);
+  assert.equal(data.summary.rooms, 14);
+  assert.equal(data.summary.rounds, 4);
+  assert.equal(data.summary.winner, "Cormac");
+  assert.equal(data.summary.winnerScore, 107);
+  assert.equal(data.summary.matchedPlayers, 85);
+  assert.deepEqual(data.meta.unmatched, []);
+  assert.equal(data.roomDifficulty.length, 14);
+  assert.equal(data.rankDistribution.length, 11);
+  assert.equal(data.finalPlayers.length, 12);
+  assert.equal(data.players.length, 85);
+  assert.deepEqual(data.topRankCounts.map(({ threshold }) => threshold), [10, 25, 50, 100]);
+
+  const kali = data.players.find((player) => player.name === "kali");
+  assert.equal(kali.competed, false);
+  assert.equal(kali.result, "DNS");
+  assert.equal(data.players.find((player) => player.name === "Edwin").sourceName, "EdwinLP");
+  assert.equal(data.players.find((player) => player.name === "pttmxrx").sourceName, "veil");
+  assert.ok(data.roomDifficulty.some((room) => room.id === "r4-room-1"));
+});

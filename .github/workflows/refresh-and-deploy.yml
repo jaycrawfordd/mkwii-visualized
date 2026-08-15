@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22.13.0"
           cache: npm
@@ -39,10 +39,10 @@ jobs:
 
       - name: Restore historical CSV cache
         id: csv-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: work/csv
-          key: mkw-lounge-csv-${{ runner.os }}-${{ steps.ladders.outputs.max_ladder_id }}-${{ hashFiles('work/download-ladders.mjs', 'work/build-dashboard-data.mjs') }}
+          key: mkw-lounge-csv-${{ runner.os }}-${{ steps.ladders.outputs.max_ladder_id }}-${{ hashFiles('work/download-ladders.mjs', 'work/build-dashboard-data.mjs', 'work/build-almia-upper-data.mjs', 'work/almia-upper-tournament.mjs') }}
 
       - name: Install dependencies
         run: npm ci
@@ -57,7 +57,7 @@ jobs:
         run: npm test
 
       - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
