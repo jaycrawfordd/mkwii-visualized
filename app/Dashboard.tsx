@@ -3,6 +3,8 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import AlmiaUpperDashboard, { type AlmiaUpperData } from "./AlmiaUpperDashboard";
 import SeasonalDashboard, { type SeasonalData } from "./SeasonalDashboard";
+import WorldwideDashboard from "./WorldwideDashboard";
+import WorldwideRankingCloud from "./WorldwideRankingCloud";
 
 type TrackType = "rt" | "ct";
 
@@ -262,8 +264,15 @@ type LiveSnapshot = {
   >;
 };
 
-const tabs = ["Overview", "Seasons", "Rank 1", "Records", "Leaderboard", "GMs", "Insights", "Almia Upper Result"] as const;
-type Tab = (typeof tabs)[number];
+const primaryTabs = [
+  { label: "Primary Stats", icon: "/leaderboard.svg" },
+  { label: "Top Players", icon: "/history.svg" },
+  { label: "Almia Upper Result", icon: "/statistics.svg" },
+  { label: "Worldwide", icon: "/globe.svg" },
+  { label: "Worldwide 2", icon: "/globe.svg" },
+] as const;
+const tabs = ["Seasons", "Interesting Stats", "GMs"] as const;
+type Tab = (typeof tabs)[number] | (typeof primaryTabs)[number]["label"];
 type RaceFilter = "12" | "32";
 type RangeFilter = "all" | string;
 
@@ -1004,7 +1013,7 @@ function CreditsPanel({ sourceTimestamp }: { sourceTimestamp: string }) {
 }
 
 function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpperData | null }) {
-  const [activeTab, setActiveTab] = useState<Tab>("Overview");
+  const [activeTab, setActiveTab] = useState<Tab>("Seasons");
   const [track, setTrack] = useState<TrackType>("rt");
   const [topRaceFilter, setTopRaceFilter] = useState<RaceFilter>("12");
   const [lowRaceFilter, setLowRaceFilter] = useState<RaceFilter>("32");
@@ -1015,6 +1024,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
   const [seasonal, setSeasonal] = useState<SeasonalData | null>(null);
   const trackData = data.byTrack[track];
   const trackName = track.toUpperCase();
+  const immersiveView = activeTab === "Worldwide" || activeTab === "Worldwide 2" || activeTab === "Almia Upper Result";
   const grandmasters = data.grandmastersByTrack?.[track] ?? (track === "rt" ? data.rtGrandmasters ?? [] : []);
   const rankYears = useMemo(
     () => [...new Set(trackData.timeline.flatMap((row) => [row.start.slice(0, 4), row.end.slice(0, 4)]))]
@@ -1058,6 +1068,10 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
     setSelectedPlayerId(null);
   }
 
+  function showPrimaryView(nextTab: Tab) {
+    setActiveTab(nextTab);
+  }
+
   async function refreshLiveStatus() {
     try {
       const response = await fetch("/api/live", { cache: "no-store" });
@@ -1089,7 +1103,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
   }, []);
 
   useEffect(() => {
-    if (activeTab !== "Seasons" || seasonal) return;
+    if ((activeTab !== "Seasons" && activeTab !== "Worldwide") || seasonal) return;
     let cancelled = false;
     void fetch("/seasonal-data.json", { cache: "no-store" })
       .then((response) => response.ok ? response.json() as Promise<SeasonalData> : null)
@@ -1100,11 +1114,27 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
     return () => { cancelled = true; };
   }, [activeTab, seasonal]);
 
+  useEffect(() => {
+    const targetByTab: Partial<Record<Tab, string>> = {
+      "Primary Stats": "leaderboard",
+      "Top Players": "rank-one",
+      "Almia Upper Result": "almia-view",
+      Worldwide: "worldwide-view",
+      "Worldwide 2": "worldwide-2-view",
+    };
+    const targetId = targetByTab[activeTab];
+    if (!targetId) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeTab]);
+
   return (
-    <main>
-      <div className="earth-content">
+    <main className={immersiveView ? "standalone-page" : ""}>
+      {!immersiveView ? <div aria-hidden="true" className="earth-content">
         <div id="earth" />
-      </div>
+      </div> : null}
 
       <nav className="lounge-nav" aria-label="MKW Lounge dashboard navigation">
         <a
@@ -1113,25 +1143,23 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         >
           MKW Lounge
         </a>
-        <a href="#current">
-          <img alt="" src="/leaderboard.svg" />
-          Leaderboard
-        </a>
-        <a href="#rank-one">
-          <img alt="" src="/history.svg" />
-          Rank 1
-        </a>
-        <a href="#records">
-          <img alt="" src="/statistics.svg" />
-          Records
-        </a>
+        {primaryTabs.map((item) => <button
+          aria-pressed={activeTab === item.label}
+          className={activeTab === item.label ? "active" : ""}
+          key={item.label}
+          onClick={() => showPrimaryView(item.label)}
+          type="button"
+        >
+          <img alt="" src={item.icon} />
+          {item.label}
+        </button>)}
         <a href="#credits">
           <img alt="" src="/csv.svg" />
           Credits
         </a>
       </nav>
 
-      <section className="hero-section">
+      {!immersiveView ? <><section className="hero-section">
         <div className="hero-copy">
           <div className="hero-topline">
             <p className="eyebrow">
@@ -1147,7 +1175,10 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         </div>
         <div className="rank-one-card">
           <span>{trackName} All-Time Rank 1 Control</span>
-          <strong>{trackData.summary.rankOneKing.name}</strong>
+          <div className="rank-one-card-player">
+            <img alt="Placeholder Mii" src="/mii-placeholder.png" />
+            <strong>{trackData.summary.rankOneKing.name}</strong>
+          </div>
           <div>
             <b>{formatNumber(trackData.summary.rankOneKing.days)}</b> days across{" "}
             {formatNumber(trackData.summary.rankOneKing.stints)} stints
@@ -1185,12 +1216,17 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
           ))}
         </div>
       </div>
+      </> : null}
 
-      {activeTab === "Almia Upper Result" && <AlmiaUpperDashboard data={almia} />}
+      {activeTab === "Almia Upper Result" && <div className="standalone-view" id="almia-view"><AlmiaUpperDashboard data={almia} /></div>}
+
+      {activeTab === "Worldwide" && <div className="standalone-view" id="worldwide-view"><WorldwideDashboard data={seasonal} track={track} /></div>}
+
+      {activeTab === "Worldwide 2" && <div className="standalone-view" id="worldwide-2-view"><WorldwideRankingCloud key={track} ladderId={trackData.meta.currentLadderId} players={trackData.currentLeaderboard} profiles={trackData.playerProfiles} totalPlayers={trackData.currentLeaderboard.length} track={track} /></div>}
 
       {activeTab === "Seasons" && <SeasonalDashboard data={seasonal} track={track} />}
 
-      {(activeTab === "Overview" || activeTab === "Rank 1") && (
+      {activeTab === "Top Players" && (
         <section className="panel wide" id="rank-one">
           <div className="panel-head">
             <div>
@@ -1247,7 +1283,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         </section>
       )}
 
-      {(activeTab === "Overview" || activeTab === "Records") && (
+      {activeTab === "Interesting Stats" && (
         <section className="records-grid" id="records">
           <div className="panel">
             <div className="panel-head compact">
@@ -1305,7 +1341,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         </section>
       )}
 
-      {activeTab === "Leaderboard" && (
+      {activeTab === "Primary Stats" && (
         <section className="panel wide" id="leaderboard">
           <div className="panel-head">
             <div>
@@ -1332,7 +1368,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         </section>
       )}
 
-      {(activeTab === "Overview" || activeTab === "GMs") && (
+      {activeTab === "GMs" && (
         <section className="panel wide">
           <div className="panel-head">
             <div>
@@ -1345,7 +1381,12 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         </section>
       )}
 
-      {(activeTab === "Overview" || activeTab === "Insights") && (
+      {activeTab === "Seasons" && <div className="current-season-divider">
+        <p className="eyebrow">{trackName} Season {trackData.meta.currentLadderId}</p>
+        <h2>Current Season Overview</h2>
+      </div>}
+
+      {activeTab === "Seasons" && (
         <section className="insights-grid">
           <div className="panel">
             <div className="panel-head compact">
@@ -1394,7 +1435,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
         </section>
       )}
 
-      {activeTab === "Overview" && (
+      {activeTab === "Seasons" && (
       <section className="bottom-grid" id="current">
         <div className="panel">
           <div className="panel-head compact">
@@ -1457,7 +1498,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
       </section>
       )}
 
-      {(activeTab === "Overview" || activeTab === "Insights") && (
+      {activeTab === "Interesting Stats" && (
         <section className="panel wide">
           <div className="panel-head">
             <div>
@@ -1504,21 +1545,17 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
 function LoadingDashboard() {
   return (
     <main>
-      <div className="earth-content">
+      <div aria-hidden="true" className="earth-content">
         <div id="earth" />
       </div>
       <nav className="lounge-nav" aria-label="MKW Lounge dashboard navigation">
         <a className="nav-brand" href="https://mkwlounge.gg/ladder/index.php?ladder_id=19&hide_unranked=0">
           MKW Lounge
         </a>
-        <a href="#rank-one">
-          <img alt="" src="/history.svg" />
-          Rank 1
-        </a>
-        <a href="#records">
-          <img alt="" src="/statistics.svg" />
-          Records
-        </a>
+        {primaryTabs.map((item) => <span className="nav-loading-item" key={item.label}>
+          <img alt="" src={item.icon} />
+          {item.label}
+        </span>)}
         <a href="#credits">
           <img alt="" src="/csv.svg" />
           Credits

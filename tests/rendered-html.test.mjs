@@ -87,6 +87,10 @@ test("ships the complete Almia Upper tournament analysis", async () => {
   assert.equal(data.rankDistribution.length, 11);
   assert.equal(data.finalPlayers.length, 12);
   assert.equal(data.players.length, 85);
+  assert.equal(data.players.find((player) => player.name === "Cormac").overallPlace, 1);
+  assert.equal(data.players.find((player) => player.name === "kali").overallPlace, 85);
+  assert.deepEqual(data.players.map((player) => player.overallPlace).sort((a, b) => a - b), Array.from({ length: 85 }, (_, index) => index + 1));
+  assert.equal(data.players.find((player) => player.name === "noob bugha").lastScore, 73);
   assert.deepEqual(data.topRankCounts.map(({ threshold }) => threshold), [10, 25, 50, 100]);
 
   const kali = data.players.find((player) => player.name === "kali");
@@ -118,4 +122,86 @@ test("ships navigable RT and CT seasonal history", async () => {
   assert.ok(currentRt.teammatePairs.length > 0);
   assert.equal(currentRt.rankDistribution.length, 12);
   assert.ok(currentRt.bans.some((ban) => ban.player === "zilla"));
+});
+
+test("ships the Wii-style Worldwide leaderboard experience", async () => {
+  const [component, dashboard, styles, mii] = await Promise.all([
+    readFile(new URL("../app/WorldwideDashboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/Dashboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../public/mii-placeholder.png", import.meta.url)),
+  ]);
+
+  assert.match(dashboard, /"Worldwide"/);
+  assert.match(component, /three@0\.179\.1\/build\/three\.module\.js/);
+  assert.match(component, /Interactive rotating worldwide globe/);
+  assert.match(component, /season\.leaderboard\.slice\(0, markerPositions\.length\)/);
+  assert.match(styles, /mii-placeholder\.png/);
+  assert.match(styles, /\.ww-globe-stage/);
+  assert.match(styles, /\.ww-ranking-list/);
+  assert.deepEqual([...mii.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+});
+
+test("ships the deterministic top-50 Worldwide rating cloud", async () => {
+  const [component, dashboard, styles, data] = await Promise.all([
+    readFile(new URL("../app/WorldwideRankingCloud.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/Dashboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../public/dashboard-data.json", import.meta.url), "utf8").then(JSON.parse),
+  ]);
+
+  assert.match(dashboard, /"Worldwide 2"/);
+  assert.match(component, /players\.slice\(0, 50\)/);
+  assert.match(component, /stableHash/);
+  assert.match(component, /row\.lane === lane && Math\.abs\(row\.x - x\) < 3\.6/);
+  assert.match(component, /Find a top 50 player/);
+  assert.match(component, /href=\{player\.url\}/);
+  assert.match(component, /mii-placeholder\.png/);
+  assert.match(component, /profiles\[selectedPlayer\.id\]\?\.percentile/);
+  assert.match(styles, /\.wr-cloud-rank-bands/);
+  assert.match(styles, /\.wr-cloud-player\.selected/);
+  assert.ok(data.byTrack.rt.currentLeaderboard.length > 50);
+  assert.ok(data.byTrack.rt.playerProfiles[data.byTrack.rt.currentLeaderboard[0].id].percentile > 99);
+  assert.match(data.byTrack.rt.playerProfiles[data.byTrack.rt.currentLeaderboard[0].id].emblem, /^https:\/\//);
+});
+
+test("ships the consolidated primary and seasonal navigation", async () => {
+  const [dashboard, styles] = await Promise.all([
+    readFile(new URL("../app/Dashboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(dashboard, /label: "Primary Stats"/);
+  assert.match(dashboard, /label: "Top Players"/);
+  assert.match(dashboard, /label: "Almia Upper Result"/);
+  assert.match(dashboard, /const tabs = \["Seasons", "Interesting Stats", "GMs"\]/);
+  assert.match(dashboard, /useState<Tab>\("Seasons"\)/);
+  assert.doesNotMatch(dashboard, /activeTab === "Overview"|activeTab === "Insights"/);
+  assert.match(dashboard, /const immersiveView = activeTab === "Worldwide" \|\| activeTab === "Worldwide 2" \|\| activeTab === "Almia Upper Result"/);
+  assert.equal((dashboard.match(/src="\/mii-placeholder\.png"/g) || []).length, 1);
+  assert.doesNotMatch(dashboard, /Player Mii/);
+  assert.match(styles, /#earth[\s\S]*?opacity: 0\.08/);
+  assert.match(styles, /\.tabs \{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+});
+
+test("ships the standalone complete-field Almia result cloud", async () => {
+  const [component, dashboard, styles] = await Promise.all([
+    readFile(new URL("../app/AlmiaResultCloud.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/Dashboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(component, /85th to 1st/);
+  assert.match(component, /buildLayout/);
+  assert.match(component, /player\.finalScore \?\? player\.lastScore/);
+  assert.match(component, /Eliminated players are ordered by score in their last round/);
+  assert.match(styles, /\.ar-cloud-mii[\s\S]*?mii-placeholder\.png/);
+  assert.match(dashboard, /const immersiveView = activeTab === "Worldwide" \|\| activeTab === "Worldwide 2" \|\| activeTab === "Almia Upper Result"/);
+  assert.match(dashboard, /scrollIntoView\(\{ behavior: "smooth", block: "start" \}\)/);
+  assert.match(dashboard, /id="almia-view"/);
+  assert.match(dashboard, /id="worldwide-view"/);
+  assert.match(dashboard, /id="worldwide-2-view"/);
+  assert.match(styles, /\.standalone-page/);
+  assert.match(styles, /\.ar-cloud-stage-bands/);
+  assert.match(styles, /\.almia-champion-mii/);
 });

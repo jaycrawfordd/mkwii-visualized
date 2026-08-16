@@ -101,7 +101,8 @@ const players = tournament.registeredPlayers.map((name) => {
   const snapshot = identity ? snapshots.get(identity.id) : null;
   const maxRound = roundByPlayer.get(name) || 0;
   const final = scoreByRoundPlayer.get(`4:${name}`);
-  return { name, id: identity?.id || null, sourceName: identity?.sourceName || null, competed: competedNames.has(name), mmr: snapshot?.mmr ?? null, lr: snapshot?.lr ?? null, rank: identity ? rankById.get(identity.id) || null : null, division: snapshot ? divisionForLr(snapshot.lr) : "Unmatched", ratingEventDate: snapshot?.eventDate || null, peakMmr: identity?.peakMmr ?? null, peakLr: identity?.peakLr ?? null, profileUrl: identity?.profileUrl || null, maxRound, result: final ? `Final #${final.place}` : maxRound ? tournament.rounds[maxRound - 1].label : "DNS", finalPlace: final?.place || null, finalScore: final?.score ?? null, allTimeGrandmaster: identity ? gmById.has(identity.id) : false };
+  const lastResult = scoreByRoundPlayer.get(`${maxRound}:${name}`);
+  return { name, id: identity?.id || null, sourceName: identity?.sourceName || null, competed: competedNames.has(name), mmr: snapshot?.mmr ?? null, lr: snapshot?.lr ?? null, rank: identity ? rankById.get(identity.id) || null : null, division: snapshot ? divisionForLr(snapshot.lr) : "Unmatched", ratingEventDate: snapshot?.eventDate || null, peakMmr: identity?.peakMmr ?? null, peakLr: identity?.peakLr ?? null, profileUrl: identity?.profileUrl || null, maxRound, result: final ? `Final #${final.place}` : maxRound ? tournament.rounds[maxRound - 1].label : "DNS", finalPlace: final?.place || null, finalScore: final?.score ?? null, lastScore: lastResult?.score ?? null, lastRoomPlace: lastResult?.place ?? null, allTimeGrandmaster: identity ? gmById.has(identity.id) : false };
 });
 
 const competitorsByMmr = players.filter((player) => player.competed && Number.isFinite(player.mmr)).sort((a, b) => b.mmr - a.mmr || a.name.localeCompare(b.name));
@@ -112,6 +113,18 @@ for (const player of players) {
   player.expectedResult = label;
   player.stageDelta = player.competed && player.mmrSeed ? player.maxRound - level : 0;
 }
+
+const tournamentOrder = [...players].sort((a, b) => {
+  if (a.finalPlace && b.finalPlace) return a.finalPlace - b.finalPlace;
+  if (a.finalPlace) return -1;
+  if (b.finalPlace) return 1;
+  return b.maxRound - a.maxRound
+    || (b.lastScore ?? -Infinity) - (a.lastScore ?? -Infinity)
+    || (a.lastRoomPlace ?? Infinity) - (b.lastRoomPlace ?? Infinity)
+    || (a.mmrSeed ?? Infinity) - (b.mmrSeed ?? Infinity)
+    || a.name.localeCompare(b.name);
+});
+tournamentOrder.forEach((player, index) => { player.overallPlace = index + 1; });
 
 const roomDifficulty = tournament.rounds.flatMap((round) => round.rooms.map((room) => {
   const roomPlayers = room.results.map(([name, score], index) => { const player = players.find((candidate) => candidate.name === name); return { name, score, place: index + 1, mmr: player?.mmr ?? null, rank: player?.rank ?? null }; });

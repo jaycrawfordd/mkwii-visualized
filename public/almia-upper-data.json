@@ -4,7 +4,7 @@
     "date": "2026-08-15",
     "ladderId": 19,
     "ratingCutoff": "2026-08-15T16:01:00Z",
-    "generatedAt": "2026-08-15T20:31:55.684Z",
+    "generatedAt": "2026-08-16T20:25:32.935Z",
     "methodology": "MMR and LR are reconstructed from each player's latest RT event state at or before the fixed cutoff. Expected advancement is seeded by cutoff MMR.",
     "unmatched": []
   },
@@ -1519,10 +1519,13 @@
       "result": "Final #5",
       "finalPlace": 5,
       "finalScore": 79,
+      "lastScore": 79,
+      "lastRoomPlace": 5,
       "allTimeGrandmaster": true,
       "mmrSeed": 30,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 5
     },
     {
       "name": "Patrick Mcalpine",
@@ -1541,10 +1544,13 @@
       "result": "Final #11",
       "finalPlace": 11,
       "finalScore": 56,
+      "lastScore": 56,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 31,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 11
     },
     {
       "name": "Toddy",
@@ -1563,10 +1569,13 @@
       "result": "Final #9",
       "finalPlace": 9,
       "finalScore": 64,
+      "lastScore": 64,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 44,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 9
     },
     {
       "name": "ousmane",
@@ -1585,10 +1594,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 58,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 55,
       "expectedResult": "Round 1",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 19
     },
     {
       "name": "dy",
@@ -1607,10 +1619,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 58,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 62,
       "expectedResult": "Round 1",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 20
     },
     {
       "name": "coco day2",
@@ -1629,10 +1644,13 @@
       "result": "Final #10",
       "finalPlace": 10,
       "finalScore": 61,
+      "lastScore": 61,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": true,
       "mmrSeed": 16,
       "expectedResult": "Semifinal",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 10
     },
     {
       "name": "Cormac",
@@ -1651,10 +1669,13 @@
       "result": "Final #1",
       "finalPlace": 1,
       "finalScore": 107,
+      "lastScore": 107,
+      "lastRoomPlace": 1,
       "allTimeGrandmaster": false,
       "mmrSeed": 22,
       "expectedResult": "Semifinal",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 1
     },
     {
       "name": "crack",
@@ -1673,10 +1694,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 64,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 25,
       "expectedResult": "Round 2",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 15
     },
     {
       "name": "season",
@@ -1695,10 +1719,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 31,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 29,
       "expectedResult": "Round 2",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 24
     },
     {
       "name": "Nlaw",
@@ -1717,10 +1744,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 55,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 46,
       "expectedResult": "Round 2",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 22
     },
     {
       "name": "Tectrox",
@@ -1739,10 +1769,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 66,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 51,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 31
     },
     {
       "name": "embrez",
@@ -1761,10 +1794,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 48,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 53,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 42
     },
     {
       "name": "Browks",
@@ -1783,10 +1819,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 67,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 56,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 29
     },
     {
       "name": "jojo",
@@ -1805,10 +1844,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 60,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 58,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 38
     },
     {
       "name": "tobun",
@@ -1827,10 +1869,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 48,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 60,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 43
     },
     {
       "name": "Kiroh",
@@ -1849,10 +1894,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 62,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 63,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 36
     },
     {
       "name": "Wohrld",
@@ -1871,10 +1919,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 55,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 64,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 39
     },
     {
       "name": "Leb",
@@ -1893,10 +1944,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 65,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 71,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 33
     },
     {
       "name": "zyoshi",
@@ -1915,10 +1969,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 34,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 77,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 47
     },
     {
       "name": "Sepi",
@@ -1937,10 +1994,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 53,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 81,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 40
     },
     {
       "name": "ilip",
@@ -1959,10 +2019,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 45,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 82,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 46
     }
   ],
   "grandmasters": [
@@ -1983,10 +2046,13 @@
       "result": "Final #12",
       "finalPlace": 12,
       "finalScore": 54,
+      "lastScore": 54,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": true,
       "mmrSeed": 9,
       "expectedResult": "Final",
       "stageDelta": 0,
+      "overallPlace": 12,
       "firstHit": "Oct 2, 2021",
       "firstSeason": 1,
       "evidence": "event division Grandmaster",
@@ -2009,10 +2075,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 66,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": true,
       "mmrSeed": 2,
       "expectedResult": "Final",
       "stageDelta": -2,
+      "overallPlace": 30,
       "firstHit": "Aug 18, 2021",
       "firstSeason": 1,
       "evidence": "event division Grandmaster",
@@ -2035,10 +2104,13 @@
       "result": "Final #4",
       "finalPlace": 4,
       "finalScore": 80,
+      "lastScore": 80,
+      "lastRoomPlace": 4,
       "allTimeGrandmaster": true,
       "mmrSeed": 7,
       "expectedResult": "Final",
       "stageDelta": 0,
+      "overallPlace": 4,
       "firstHit": "Nov 27, 2021",
       "firstSeason": 1,
       "evidence": "event division Grandmaster",
@@ -2061,10 +2133,13 @@
       "result": "Final #6",
       "finalPlace": 6,
       "finalScore": 68,
+      "lastScore": 68,
+      "lastRoomPlace": 6,
       "allTimeGrandmaster": true,
       "mmrSeed": 1,
       "expectedResult": "Final",
       "stageDelta": 0,
+      "overallPlace": 6,
       "firstHit": "Sep 13, 2021",
       "firstSeason": 1,
       "evidence": "event division Grandmaster",
@@ -2087,10 +2162,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 73,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 6,
       "expectedResult": "Final",
       "stageDelta": -1,
+      "overallPlace": 13,
       "firstHit": "Aug 6, 2022",
       "firstSeason": 3,
       "evidence": "event MMR >= 14,000",
@@ -2113,10 +2191,13 @@
       "result": "Final #7",
       "finalPlace": 7,
       "finalScore": 67,
+      "lastScore": 67,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 11,
       "expectedResult": "Final",
       "stageDelta": 0,
+      "overallPlace": 7,
       "firstHit": "Nov 6, 2022",
       "firstSeason": 5,
       "evidence": "event MMR >= 14,000",
@@ -2139,10 +2220,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 60,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": true,
       "mmrSeed": 18,
       "expectedResult": "Semifinal",
       "stageDelta": 0,
+      "overallPlace": 17,
       "firstHit": "Apr 10, 2022",
       "firstSeason": 3,
       "evidence": "event MMR >= 14,000",
@@ -2165,10 +2249,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 69,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 3,
       "expectedResult": "Final",
       "stageDelta": -1,
+      "overallPlace": 14,
       "firstHit": "Nov 24, 2021",
       "firstSeason": 1,
       "evidence": "event division Grandmaster",
@@ -2191,10 +2278,13 @@
       "result": "Final #5",
       "finalPlace": 5,
       "finalScore": 79,
+      "lastScore": 79,
+      "lastRoomPlace": 5,
       "allTimeGrandmaster": true,
       "mmrSeed": 30,
       "expectedResult": "Round 2",
       "stageDelta": 2,
+      "overallPlace": 5,
       "firstHit": "Mar 18, 2023",
       "firstSeason": 7,
       "evidence": "event MMR >= 14,000",
@@ -2217,10 +2307,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 68,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 33,
       "expectedResult": "Round 2",
       "stageDelta": 0,
+      "overallPlace": 28,
       "firstHit": "Nov 23, 2022",
       "firstSeason": 5,
       "evidence": "event MMR >= 14,000",
@@ -2243,10 +2336,13 @@
       "result": "Final #10",
       "finalPlace": 10,
       "finalScore": 61,
+      "lastScore": 61,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": true,
       "mmrSeed": 16,
       "expectedResult": "Semifinal",
       "stageDelta": 1,
+      "overallPlace": 10,
       "firstHit": "Apr 13, 2022",
       "firstSeason": 3,
       "evidence": "event MMR >= 14,000",
@@ -2269,10 +2365,13 @@
       "result": "Final #2",
       "finalPlace": 2,
       "finalScore": 92,
+      "lastScore": 92,
+      "lastRoomPlace": 2,
       "allTimeGrandmaster": true,
       "mmrSeed": 5,
       "expectedResult": "Final",
       "stageDelta": 0,
+      "overallPlace": 2,
       "firstHit": "May 4, 2022",
       "firstSeason": 3,
       "evidence": "event MMR >= 14,000",
@@ -2295,10 +2394,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 49,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": true,
       "mmrSeed": 15,
       "expectedResult": "Semifinal",
       "stageDelta": -1,
+      "overallPlace": 41,
       "firstHit": "Feb 22, 2026",
       "firstSeason": 17,
       "evidence": "event MMR >= 14,000",
@@ -2321,10 +2423,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 60,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": true,
       "mmrSeed": 43,
       "expectedResult": "Round 2",
       "stageDelta": 0,
+      "overallPlace": 37,
       "firstHit": "Nov 27, 2021",
       "firstSeason": 1,
       "evidence": "event division Grandmaster",
@@ -2347,10 +2452,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 65,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": true,
       "mmrSeed": 13,
       "expectedResult": "Semifinal",
       "stageDelta": -1,
+      "overallPlace": 32,
       "firstHit": "Mar 7, 2022",
       "firstSeason": 3,
       "evidence": "event MMR >= 14,000",
@@ -2373,10 +2481,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 62,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": true,
       "mmrSeed": 10,
       "expectedResult": "Final",
       "stageDelta": -2,
+      "overallPlace": 34,
       "firstHit": "Feb 22, 2026",
       "firstSeason": 17,
       "evidence": "event MMR >= 14,000",
@@ -2399,10 +2510,13 @@
       "result": "Final #3",
       "finalPlace": 3,
       "finalScore": 84,
+      "lastScore": 84,
+      "lastRoomPlace": 3,
       "allTimeGrandmaster": true,
       "mmrSeed": 4,
       "expectedResult": "Final",
       "stageDelta": 0,
+      "overallPlace": 3,
       "firstHit": "Feb 7, 2026",
       "firstSeason": 17,
       "evidence": "event division Grandmaster",
@@ -2427,10 +2541,13 @@
       "result": "Final #1",
       "finalPlace": 1,
       "finalScore": 107,
+      "lastScore": 107,
+      "lastRoomPlace": 1,
       "allTimeGrandmaster": false,
       "mmrSeed": 22,
       "expectedResult": "Semifinal",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 1
     },
     {
       "name": "Nikola Tesla",
@@ -2449,10 +2566,13 @@
       "result": "Final #2",
       "finalPlace": 2,
       "finalScore": 92,
+      "lastScore": 92,
+      "lastRoomPlace": 2,
       "allTimeGrandmaster": true,
       "mmrSeed": 5,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 2
     },
     {
       "name": "Black",
@@ -2471,10 +2591,13 @@
       "result": "Final #3",
       "finalPlace": 3,
       "finalScore": 84,
+      "lastScore": 84,
+      "lastRoomPlace": 3,
       "allTimeGrandmaster": true,
       "mmrSeed": 4,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 3
     },
     {
       "name": "kevin",
@@ -2493,10 +2616,13 @@
       "result": "Final #4",
       "finalPlace": 4,
       "finalScore": 80,
+      "lastScore": 80,
+      "lastRoomPlace": 4,
       "allTimeGrandmaster": true,
       "mmrSeed": 7,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 4
     },
     {
       "name": "Kenny",
@@ -2515,10 +2641,13 @@
       "result": "Final #5",
       "finalPlace": 5,
       "finalScore": 79,
+      "lastScore": 79,
+      "lastRoomPlace": 5,
       "allTimeGrandmaster": true,
       "mmrSeed": 30,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 5
     },
     {
       "name": "Fox",
@@ -2537,10 +2666,13 @@
       "result": "Final #6",
       "finalPlace": 6,
       "finalScore": 68,
+      "lastScore": 68,
+      "lastRoomPlace": 6,
       "allTimeGrandmaster": true,
       "mmrSeed": 1,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 6
     },
     {
       "name": "pam2024mode",
@@ -2559,10 +2691,13 @@
       "result": "Final #7",
       "finalPlace": 7,
       "finalScore": 67,
+      "lastScore": 67,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 11,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 7
     },
     {
       "name": "White",
@@ -2581,10 +2716,13 @@
       "result": "Final #8",
       "finalPlace": 8,
       "finalScore": 64,
+      "lastScore": 64,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 12,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 8
     },
     {
       "name": "Toddy",
@@ -2603,10 +2741,13 @@
       "result": "Final #9",
       "finalPlace": 9,
       "finalScore": 64,
+      "lastScore": 64,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 44,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 9
     },
     {
       "name": "coco day2",
@@ -2625,10 +2766,13 @@
       "result": "Final #10",
       "finalPlace": 10,
       "finalScore": 61,
+      "lastScore": 61,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": true,
       "mmrSeed": 16,
       "expectedResult": "Semifinal",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 10
     },
     {
       "name": "Patrick Mcalpine",
@@ -2647,10 +2791,13 @@
       "result": "Final #11",
       "finalPlace": 11,
       "finalScore": 56,
+      "lastScore": 56,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 31,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 11
     },
     {
       "name": "barney",
@@ -2669,10 +2816,13 @@
       "result": "Final #12",
       "finalPlace": 12,
       "finalScore": 54,
+      "lastScore": 54,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": true,
       "mmrSeed": 9,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 12
     }
   ],
   "players": [
@@ -2693,10 +2843,13 @@
       "result": "Final #6",
       "finalPlace": 6,
       "finalScore": 68,
+      "lastScore": 68,
+      "lastRoomPlace": 6,
       "allTimeGrandmaster": true,
       "mmrSeed": 1,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 6
     },
     {
       "name": "Kasperinos",
@@ -2715,10 +2868,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 66,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": true,
       "mmrSeed": 2,
       "expectedResult": "Final",
-      "stageDelta": -2
+      "stageDelta": -2,
+      "overallPlace": 30
     },
     {
       "name": "py",
@@ -2737,10 +2893,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 69,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 3,
       "expectedResult": "Final",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 14
     },
     {
       "name": "Black",
@@ -2759,10 +2918,13 @@
       "result": "Final #3",
       "finalPlace": 3,
       "finalScore": 84,
+      "lastScore": 84,
+      "lastRoomPlace": 3,
       "allTimeGrandmaster": true,
       "mmrSeed": 4,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 3
     },
     {
       "name": "Nikola Tesla",
@@ -2781,10 +2943,13 @@
       "result": "Final #2",
       "finalPlace": 2,
       "finalScore": 92,
+      "lastScore": 92,
+      "lastRoomPlace": 2,
       "allTimeGrandmaster": true,
       "mmrSeed": 5,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 2
     },
     {
       "name": "noob bugha",
@@ -2803,10 +2968,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 73,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 6,
       "expectedResult": "Final",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 13
     },
     {
       "name": "kevin",
@@ -2825,10 +2993,13 @@
       "result": "Final #4",
       "finalPlace": 4,
       "finalScore": 80,
+      "lastScore": 80,
+      "lastRoomPlace": 4,
       "allTimeGrandmaster": true,
       "mmrSeed": 7,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 4
     },
     {
       "name": "Isaac Newton",
@@ -2847,10 +3018,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 62,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 8,
       "expectedResult": "Final",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 16
     },
     {
       "name": "barney",
@@ -2869,10 +3043,13 @@
       "result": "Final #12",
       "finalPlace": 12,
       "finalScore": 54,
+      "lastScore": 54,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": true,
       "mmrSeed": 9,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 12
     },
     {
       "name": "Moroha",
@@ -2891,10 +3068,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 62,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": true,
       "mmrSeed": 10,
       "expectedResult": "Final",
-      "stageDelta": -2
+      "stageDelta": -2,
+      "overallPlace": 34
     },
     {
       "name": "pam2024mode",
@@ -2913,10 +3093,13 @@
       "result": "Final #7",
       "finalPlace": 7,
       "finalScore": 67,
+      "lastScore": 67,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 11,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 7
     },
     {
       "name": "White",
@@ -2935,10 +3118,13 @@
       "result": "Final #8",
       "finalPlace": 8,
       "finalScore": 64,
+      "lastScore": 64,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 12,
       "expectedResult": "Final",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 8
     },
     {
       "name": "swofg",
@@ -2957,10 +3143,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 65,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": true,
       "mmrSeed": 13,
       "expectedResult": "Semifinal",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 32
     },
     {
       "name": "Nuke",
@@ -2979,10 +3168,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 58,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 14,
       "expectedResult": "Semifinal",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 18
     },
     {
       "name": "zilla",
@@ -3001,10 +3193,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 49,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": true,
       "mmrSeed": 15,
       "expectedResult": "Semifinal",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 41
     },
     {
       "name": "coco day2",
@@ -3023,10 +3218,13 @@
       "result": "Final #10",
       "finalPlace": 10,
       "finalScore": 61,
+      "lastScore": 61,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": true,
       "mmrSeed": 16,
       "expectedResult": "Semifinal",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 10
     },
     {
       "name": "Tony Vlachos",
@@ -3045,10 +3243,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 68,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": false,
       "mmrSeed": 17,
       "expectedResult": "Semifinal",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 27
     },
     {
       "name": "Quinn",
@@ -3067,10 +3268,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 60,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": true,
       "mmrSeed": 18,
       "expectedResult": "Semifinal",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 17
     },
     {
       "name": "fifi",
@@ -3089,10 +3293,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 10,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 19,
       "expectedResult": "Semifinal",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 48
     },
     {
       "name": "jaro",
@@ -3111,10 +3318,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 34,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 20,
       "expectedResult": "Semifinal",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 23
     },
     {
       "name": "Azn",
@@ -3133,10 +3343,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 36,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 21,
       "expectedResult": "Semifinal",
-      "stageDelta": -2
+      "stageDelta": -2,
+      "overallPlace": 65
     },
     {
       "name": "Cormac",
@@ -3155,10 +3368,13 @@
       "result": "Final #1",
       "finalPlace": 1,
       "finalScore": 107,
+      "lastScore": 107,
+      "lastRoomPlace": 1,
       "allTimeGrandmaster": false,
       "mmrSeed": 22,
       "expectedResult": "Semifinal",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 1
     },
     {
       "name": "Theodor",
@@ -3177,10 +3393,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 43,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 23,
       "expectedResult": "Semifinal",
-      "stageDelta": -2
+      "stageDelta": -2,
+      "overallPlace": 49
     },
     {
       "name": "Misa",
@@ -3199,10 +3418,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 58,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 24,
       "expectedResult": "Semifinal",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 21
     },
     {
       "name": "crack",
@@ -3221,10 +3443,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 64,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 25,
       "expectedResult": "Round 2",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 15
     },
     {
       "name": "Bally",
@@ -3243,10 +3468,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 37,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 26,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 63
     },
     {
       "name": "MattAUS",
@@ -3265,10 +3493,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 41,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 27,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 53
     },
     {
       "name": "KMNZ",
@@ -3287,10 +3518,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 0,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 28,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 80
     },
     {
       "name": "season",
@@ -3309,10 +3543,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 31,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 29,
       "expectedResult": "Round 2",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 24
     },
     {
       "name": "Kenny",
@@ -3331,10 +3568,13 @@
       "result": "Final #5",
       "finalPlace": 5,
       "finalScore": 79,
+      "lastScore": 79,
+      "lastRoomPlace": 5,
       "allTimeGrandmaster": true,
       "mmrSeed": 30,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 5
     },
     {
       "name": "Patrick Mcalpine",
@@ -3353,10 +3593,13 @@
       "result": "Final #11",
       "finalPlace": 11,
       "finalScore": 56,
+      "lastScore": 56,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 31,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 11
     },
     {
       "name": "Ramiel",
@@ -3375,10 +3618,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 40,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 32,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 55
     },
     {
       "name": "Prin",
@@ -3397,10 +3643,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 68,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": true,
       "mmrSeed": 33,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 28
     },
     {
       "name": "sousui",
@@ -3419,10 +3668,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 69,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": false,
       "mmrSeed": 34,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 25
     },
     {
       "name": "Zyra",
@@ -3441,10 +3693,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 38,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 35,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 59
     },
     {
       "name": "pttmxrx",
@@ -3463,10 +3718,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 69,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": false,
       "mmrSeed": 36,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 26
     },
     {
       "name": "ish",
@@ -3485,10 +3743,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 62,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 37,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 35
     },
     {
       "name": "smash",
@@ -3507,10 +3768,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 22,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 38,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 75
     },
     {
       "name": "josh",
@@ -3529,10 +3793,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 46,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 39,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 45
     },
     {
       "name": "Kyon",
@@ -3551,10 +3818,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 43,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 40,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 50
     },
     {
       "name": "tosa",
@@ -3573,10 +3843,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 43,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 41,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 51
     },
     {
       "name": "Klover",
@@ -3595,10 +3868,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 34,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 42,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 67
     },
     {
       "name": "nefer",
@@ -3617,10 +3893,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 60,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": true,
       "mmrSeed": 43,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 37
     },
     {
       "name": "Toddy",
@@ -3639,10 +3918,13 @@
       "result": "Final #9",
       "finalPlace": 9,
       "finalScore": 64,
+      "lastScore": 64,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 44,
       "expectedResult": "Round 2",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 9
     },
     {
       "name": "Jawdyn",
@@ -3661,10 +3943,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 28,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 45,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 70
     },
     {
       "name": "Nlaw",
@@ -3683,10 +3968,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 55,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 46,
       "expectedResult": "Round 2",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 22
     },
     {
       "name": "kali",
@@ -3705,10 +3993,13 @@
       "result": "DNS",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": null,
+      "lastRoomPlace": null,
       "allTimeGrandmaster": false,
       "mmrSeed": null,
       "expectedResult": "Unrated",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 85
     },
     {
       "name": "holy",
@@ -3727,10 +4018,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 43,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 47,
       "expectedResult": "Round 2",
-      "stageDelta": -1
+      "stageDelta": -1,
+      "overallPlace": 52
     },
     {
       "name": "sealion",
@@ -3749,10 +4043,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 47,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 48,
       "expectedResult": "Round 2",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 44
     },
     {
       "name": "NUBBLY",
@@ -3771,10 +4068,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 21,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 49,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 76
     },
     {
       "name": "deez",
@@ -3793,10 +4093,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 25,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 50,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 72
     },
     {
       "name": "Tectrox",
@@ -3815,10 +4118,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 66,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 51,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 31
     },
     {
       "name": "her mit",
@@ -3837,10 +4143,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 0,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 52,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 82
     },
     {
       "name": "embrez",
@@ -3859,10 +4168,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 48,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 53,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 42
     },
     {
       "name": "Paul Youngblood",
@@ -3881,10 +4193,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 26,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 54,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 71
     },
     {
       "name": "ousmane",
@@ -3903,10 +4218,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 58,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 55,
       "expectedResult": "Round 1",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 19
     },
     {
       "name": "Browks",
@@ -3925,10 +4243,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 67,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 56,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 29
     },
     {
       "name": "mayuka",
@@ -3947,10 +4268,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 39,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 57,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 56
     },
     {
       "name": "jojo",
@@ -3969,10 +4293,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 60,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 58,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 38
     },
     {
       "name": "lr",
@@ -3991,10 +4318,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 36,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 59,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 64
     },
     {
       "name": "tobun",
@@ -4013,10 +4343,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 48,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 60,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 43
     },
     {
       "name": "Edwin",
@@ -4035,10 +4368,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 39,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 61,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 57
     },
     {
       "name": "dy",
@@ -4057,10 +4393,13 @@
       "result": "Semifinal",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 58,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 62,
       "expectedResult": "Round 1",
-      "stageDelta": 2
+      "stageDelta": 2,
+      "overallPlace": 20
     },
     {
       "name": "Kiroh",
@@ -4079,10 +4418,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 62,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 63,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 36
     },
     {
       "name": "Wohrld",
@@ -4101,10 +4443,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 55,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 64,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 39
     },
     {
       "name": "EDavid",
@@ -4123,10 +4468,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 37,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 65,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 61
     },
     {
       "name": "studio ghibli",
@@ -4145,10 +4493,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 0,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 66,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 83
     },
     {
       "name": "Alysa Liu",
@@ -4167,10 +4518,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 39,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 67,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 58
     },
     {
       "name": "Cynda",
@@ -4189,10 +4543,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 40,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 68,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 54
     },
     {
       "name": "Snickers",
@@ -4211,10 +4568,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 35,
+      "lastRoomPlace": 7,
       "allTimeGrandmaster": false,
       "mmrSeed": 69,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 66
     },
     {
       "name": "runo",
@@ -4233,10 +4593,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 37,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 70,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 62
     },
     {
       "name": "Leb",
@@ -4255,10 +4618,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 65,
+      "lastRoomPlace": 9,
       "allTimeGrandmaster": false,
       "mmrSeed": 71,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 33
     },
     {
       "name": "brisk",
@@ -4277,10 +4643,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 24,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 72,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 73
     },
     {
       "name": "Joey",
@@ -4299,10 +4668,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 15,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 73,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 79
     },
     {
       "name": "HypeSpeed",
@@ -4321,10 +4693,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 19,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 74,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 78
     },
     {
       "name": "Cypher",
@@ -4343,10 +4718,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 0,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 75,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 81
     },
     {
       "name": "Leon",
@@ -4365,10 +4743,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 38,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 76,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 60
     },
     {
       "name": "zyoshi",
@@ -4387,10 +4768,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 34,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 77,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 47
     },
     {
       "name": "Danyy",
@@ -4409,10 +4793,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 29,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 78,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 69
     },
     {
       "name": "DarkChaos",
@@ -4431,10 +4818,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 24,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 79,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 74
     },
     {
       "name": "jay",
@@ -4453,10 +4843,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 0,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 80,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 84
     },
     {
       "name": "Sepi",
@@ -4475,10 +4868,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 53,
+      "lastRoomPlace": 10,
       "allTimeGrandmaster": false,
       "mmrSeed": 81,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 40
     },
     {
       "name": "ilip",
@@ -4497,10 +4893,13 @@
       "result": "Round 2",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 45,
+      "lastRoomPlace": 12,
       "allTimeGrandmaster": false,
       "mmrSeed": 82,
       "expectedResult": "Round 1",
-      "stageDelta": 1
+      "stageDelta": 1,
+      "overallPlace": 46
     },
     {
       "name": "Dudu",
@@ -4519,10 +4918,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 19,
+      "lastRoomPlace": 11,
       "allTimeGrandmaster": false,
       "mmrSeed": 83,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 77
     },
     {
       "name": "Himari Sanada",
@@ -4541,10 +4943,13 @@
       "result": "Round 1",
       "finalPlace": null,
       "finalScore": null,
+      "lastScore": 31,
+      "lastRoomPlace": 8,
       "allTimeGrandmaster": false,
       "mmrSeed": 84,
       "expectedResult": "Round 1",
-      "stageDelta": 0
+      "stageDelta": 0,
+      "overallPlace": 68
     }
   ]
 }

@@ -1,12 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import AlmiaResultCloud from "./AlmiaResultCloud";
 
 type Player = {
   name: string; id: string | null; competed: boolean; mmr: number | null; lr: number | null; rank: number | null;
   division: string; peakMmr: number | null; profileUrl: string | null; result: string; finalPlace: number | null;
   finalScore: number | null; allTimeGrandmaster: boolean; mmrSeed: number | null; expectedResult: string;
-  stageDelta: number; firstHit?: string;
+  stageDelta: number; firstHit?: string; maxRound: number; lastScore: number | null; lastRoomPlace: number | null;
+  overallPlace: number;
 };
 type Room = { id: string; roundLabel: string; room: number; host: string; format: string; averageMmr: number | null; averageRank: number | null; difficultyRank: number };
 export type AlmiaUpperData = {
@@ -50,10 +52,13 @@ export default function AlmiaUpperDashboard({ data }: { data: AlmiaUpperData | n
   }, [data, query]);
   if (!data) return <section className="panel wide almia-empty">Tournament analysis is loading.</section>;
   const maxRoundMmr = Math.max(...data.roundStrength.map((round) => round.averageMmr || 0), 1);
+  const champion = data.players.find((player) => player.name === data.summary.winner);
 
   return <section className="almia-dashboard" aria-label="Almia Upper tournament analysis">
     <header className="panel wide almia-head"><div><p className="eyebrow">RT Upper · August 15, 2026</p><h2>Almia Upper Result</h2><p>Four rounds measured against the RT ladder exactly four hours before the source refresh.</p></div>
-      <div className="almia-champion"><span>Champion</span><strong>{data.summary.winner}</strong><b>{data.summary.winnerScore} final points</b></div></header>
+      <div className="almia-champion"><span>Champion</span><div className="almia-champion-player"><span className="almia-champion-mii" /><div><strong>{data.summary.winner}</strong><b>{data.summary.winnerScore} final points</b>{champion?.profileUrl ? <a href={champion.profileUrl} rel="noreferrer" target="_blank">Open profile</a> : null}</div></div></div></header>
+
+    <AlmiaResultCloud players={data.players} winner={data.summary.winner} />
 
     <div className="almia-stats">
       <Stat label="Competed" value={fmt(data.summary.competitors)} detail={`${data.summary.registeredPlayers} registered · 1 DNS`} />
