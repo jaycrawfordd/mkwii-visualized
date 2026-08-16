@@ -2,6 +2,7 @@
 
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import AlmiaUpperDashboard, { type AlmiaUpperData } from "./AlmiaUpperDashboard";
+import SeasonalDashboard, { type SeasonalData } from "./SeasonalDashboard";
 
 type TrackType = "rt" | "ct";
 
@@ -261,7 +262,7 @@ type LiveSnapshot = {
   >;
 };
 
-const tabs = ["Overview", "Rank 1", "Records", "Leaderboard", "GMs", "Insights", "Almia Upper Result"] as const;
+const tabs = ["Overview", "Seasons", "Rank 1", "Records", "Leaderboard", "GMs", "Insights", "Almia Upper Result"] as const;
 type Tab = (typeof tabs)[number];
 type RaceFilter = "12" | "32";
 type RangeFilter = "all" | string;
@@ -1011,6 +1012,7 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
   const [leaderboardQuery, setLeaderboardQuery] = useState("");
   const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(null);
   const [live, setLive] = useState<LiveSnapshot | null>(null);
+  const [seasonal, setSeasonal] = useState<SeasonalData | null>(null);
   const trackData = data.byTrack[track];
   const trackName = track.toUpperCase();
   const grandmasters = data.grandmastersByTrack?.[track] ?? (track === "rt" ? data.rtGrandmasters ?? [] : []);
@@ -1085,6 +1087,18 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (activeTab !== "Seasons" || seasonal) return;
+    let cancelled = false;
+    void fetch("/seasonal-data.json", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() as Promise<SeasonalData> : null)
+      .then((snapshot) => {
+        if (!cancelled && snapshot) setSeasonal(snapshot);
+      })
+      .catch(() => undefined);
+    return () => { cancelled = true; };
+  }, [activeTab, seasonal]);
 
   return (
     <main>
@@ -1173,6 +1187,8 @@ function DashboardLoaded({ data, almia }: { data: DashboardData; almia: AlmiaUpp
       </div>
 
       {activeTab === "Almia Upper Result" && <AlmiaUpperDashboard data={almia} />}
+
+      {activeTab === "Seasons" && <SeasonalDashboard data={seasonal} track={track} />}
 
       {(activeTab === "Overview" || activeTab === "Rank 1") && (
         <section className="panel wide" id="rank-one">

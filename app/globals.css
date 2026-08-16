@@ -403,7 +403,7 @@ h3 {
 
 .tabs {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .tabs button {
@@ -761,6 +761,10 @@ td small {
 
 .positive {
   color: var(--green);
+}
+
+.negative {
+  color: var(--danger);
 }
 
 .danger {
@@ -1302,6 +1306,351 @@ td small {
   color: var(--muted);
 }
 
+.season-dashboard {
+  display: grid;
+  gap: 18px;
+}
+
+.season-selector {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: rgba(14, 14, 14, 0.94);
+  padding: 8px;
+}
+
+.season-selector button {
+  display: grid;
+  flex: 1 0 82px;
+  min-height: 46px;
+  place-items: center;
+  border: 1px solid #3a3a3a;
+  background: #1b1b1b;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+
+.season-selector button:hover,
+.season-selector button.active {
+  border-color: var(--cyan-bright);
+  background: var(--cyan);
+}
+
+.season-selector small {
+  color: #d8f6ff;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.season-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+  gap: 28px;
+  align-items: center;
+  border-left: 5px solid var(--cyan);
+}
+
+.season-head h2 {
+  font-size: clamp(38px, 5vw, 64px);
+}
+
+.season-head p:last-child,
+.season-note,
+.empty-copy {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.season-champion {
+  display: grid;
+  gap: 7px;
+  border-left: 1px solid var(--line);
+  padding: 16px 0 16px 28px;
+}
+
+.season-champion span,
+.season-stat span,
+.season-stat small {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.season-champion strong {
+  overflow-wrap: anywhere;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+.season-champion b {
+  color: var(--green);
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.season-champion a {
+  width: fit-content;
+  margin-top: 6px;
+  color: var(--cyan-bright);
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.season-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.season-stat {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: rgba(30, 30, 30, 0.88);
+  padding: 17px;
+}
+
+.season-stat strong {
+  display: block;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(26px, 3vw, 39px);
+  line-height: 1;
+}
+
+.season-method {
+  margin: -2px 0 0;
+  border-left: 3px solid var(--cyan-bright);
+  background: rgba(0, 174, 239, 0.07);
+  padding: 11px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.season-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.season-two-column.inset {
+  gap: 24px;
+}
+
+.season-two-column.inset h3 {
+  margin-bottom: 12px;
+}
+
+.season-list,
+.milestone-list {
+  display: grid;
+  max-height: 570px;
+  gap: 8px;
+  overflow: auto;
+}
+
+.season-list article,
+.milestone-list article {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 11px;
+  align-items: center;
+  border: 1px solid var(--line-soft);
+  background: rgba(7, 7, 7, 0.42);
+  padding: 9px 11px;
+}
+
+.season-list article > b {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  background: #242424;
+  color: var(--cyan-bright);
+  font-family: "Oswald", sans-serif;
+}
+
+.season-list strong,
+.season-list small,
+.milestone-list strong,
+.milestone-list small {
+  display: block;
+}
+
+.season-list strong,
+.milestone-list strong {
+  overflow: hidden;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.season-list small,
+.milestone-list small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.season-list article > span,
+.season-list article > a {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+
+.compact-list article > a {
+  text-decoration: underline;
+}
+
+.season-division-curve {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(58px, 1fr));
+  gap: 7px;
+  min-height: 325px;
+  align-items: end;
+  overflow-x: auto;
+  padding-top: 8px;
+}
+
+.season-division-curve > div {
+  display: grid;
+  grid-template-rows: 24px 230px 32px;
+  gap: 6px;
+  min-width: 58px;
+  text-align: center;
+}
+
+.season-division-curve b {
+  color: var(--cyan-bright);
+  font-family: "Oswald", sans-serif;
+}
+
+.season-division-curve span {
+  position: relative;
+  background: rgba(0, 0, 0, 0.32);
+  outline: 1px solid #2d2d2d;
+}
+
+.season-division-curve i {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  left: 8px;
+  background: var(--green);
+}
+
+.season-division-curve small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 10px;
+  text-overflow: ellipsis;
+}
+
+.metric-switch {
+  display: grid;
+  grid-template-columns: repeat(2, 64px);
+}
+
+.metric-switch button {
+  height: 36px;
+  border: 1px solid #3c3c3c;
+  background: #181818;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+}
+
+.metric-switch button.active {
+  border-color: var(--cyan-bright);
+  background: var(--cyan);
+}
+
+.milestone-list article {
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+}
+
+.milestone-list > article > span {
+  padding: 6px 8px;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.milestone-list .gm {
+  background: var(--gold);
+  color: #111;
+}
+
+.milestone-list .master {
+  background: var(--cyan);
+}
+
+.milestone-list a {
+  color: var(--cyan-bright);
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.season-note {
+  margin: -4px 0 16px;
+  font-size: 13px;
+}
+
+.ban-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.ban-grid article {
+  border: 1px solid var(--line-soft);
+  background: rgba(8, 8, 8, 0.5);
+  padding: 13px;
+}
+
+.ban-grid article > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ban-grid strong {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+
+.ban-grid time,
+.ban-grid b {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.ban-grid b {
+  display: block;
+  margin-top: 5px;
+  color: var(--danger);
+}
+
+.ban-grid p {
+  margin: 8px 0 0;
+  color: #d8dde0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.season-table {
+  max-height: 680px;
+  overflow: auto;
+}
+
+.season-loading {
+  color: var(--muted);
+}
+
 .credits-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1366,12 +1715,19 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .season-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .almia-head,
-  .almia-two-column {
+  .almia-two-column,
+  .season-head,
+  .season-two-column {
     grid-template-columns: 1fr;
   }
 
-  .almia-champion {
+  .almia-champion,
+  .season-champion {
     border-top: 1px solid var(--line);
     border-left: 0;
     padding: 20px 0 0;
@@ -1428,7 +1784,9 @@ footer {
   .return-list,
   .live-items,
   .almia-stats,
-  .top-rank-grid {
+  .top-rank-grid,
+  .season-stats,
+  .ban-grid {
     grid-template-columns: 1fr;
   }
 

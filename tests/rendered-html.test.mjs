@@ -96,3 +96,26 @@ test("ships the complete Almia Upper tournament analysis", async () => {
   assert.equal(data.players.find((player) => player.name === "pttmxrx").sourceName, "veil");
   assert.ok(data.roomDifficulty.some((room) => room.id === "r4-room-1"));
 });
+
+test("ships navigable RT and CT seasonal history", async () => {
+  const data = JSON.parse(await readFile(new URL("../public/seasonal-data.json", import.meta.url), "utf8"));
+
+  assert.equal(data.seasons.length, 20);
+  assert.equal(data.seasons.filter((season) => season.meta.track === "rt").length, 10);
+  assert.equal(data.seasons.filter((season) => season.meta.track === "ct").length, 10);
+
+  const currentRt = data.seasons.find((season) => season.meta.ladderId === 19);
+  assert.equal(currentRt.meta.current, true);
+  assert.equal(currentRt.meta.start, "2026-03-28");
+  assert.ok(currentRt.meta.eventCount > 6000);
+  assert.ok(currentRt.leaderboard.length > 1000);
+  assert.ok(currentRt.greatestGains.length > 0);
+  assert.ok(currentRt.greatestFalls.length > 0);
+  assert.ok(currentRt.improvements.length > 0);
+  assert.ok(currentRt.divisionHits.some((row) => row.division === "Grandmaster"));
+  assert.ok(currentRt.largestMmrGains[0].url.includes("table.php"));
+  assert.ok(currentRt.largestLrLosses[0].url.includes("table.php"));
+  assert.ok(currentRt.teammatePairs.length > 0);
+  assert.equal(currentRt.rankDistribution.length, 12);
+  assert.ok(currentRt.bans.some((ban) => ban.player === "zilla"));
+});

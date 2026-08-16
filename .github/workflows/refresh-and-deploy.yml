@@ -42,7 +42,7 @@ jobs:
         uses: actions/cache@v6
         with:
           path: work/csv
-          key: mkw-lounge-csv-${{ runner.os }}-${{ steps.ladders.outputs.max_ladder_id }}-${{ hashFiles('work/download-ladders.mjs', 'work/build-dashboard-data.mjs', 'work/build-almia-upper-data.mjs', 'work/almia-upper-tournament.mjs') }}
+          key: mkw-lounge-csv-${{ runner.os }}-${{ steps.ladders.outputs.max_ladder_id }}-${{ hashFiles('work/download-ladders.mjs', 'work/build-dashboard-data.mjs', 'work/build-almia-upper-data.mjs', 'work/almia-upper-tournament.mjs', 'work/build-seasonal-data.mjs', 'work/player-bans.txt') }}
 
       - name: Install dependencies
         run: npm ci
