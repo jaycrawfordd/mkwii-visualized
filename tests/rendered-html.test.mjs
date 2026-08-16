@@ -98,6 +98,7 @@ test("ships the complete Almia Upper tournament analysis", async () => {
   assert.equal(kali.result, "DNS");
   assert.equal(data.players.find((player) => player.name === "Edwin").sourceName, "EdwinLP");
   assert.equal(data.players.find((player) => player.name === "pttmxrx").sourceName, "veil");
+  assert.equal(data.players.find((player) => player.name === "coco day2").id, "525");
   assert.ok(data.roomDifficulty.some((room) => room.id === "r4-room-1"));
 });
 

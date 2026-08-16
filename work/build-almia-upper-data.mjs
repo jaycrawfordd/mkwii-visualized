@@ -57,13 +57,17 @@ const currentNameAliases = new Map([
   ["Edwin", "EdwinLP"],
   ["pttmxrx", "veil"],
 ]);
+const knownPlayerIds = new Map([
+  ["coco day2", "525"],
+]);
 
 const leaderboard = parseCsv(leaderboardPath);
 const byName = new Map(leaderboard.map((row) => [normalize(row.player_name), row]));
+const byId = new Map(leaderboard.map((row) => [row.player_id, row]));
 const identities = new Map();
 const unmatched = [];
 for (const name of tournament.registeredPlayers) {
-  const row = byName.get(normalize(currentNameAliases.get(name) || name));
+  const row = byName.get(normalize(currentNameAliases.get(name) || name)) || byId.get(knownPlayerIds.get(name));
   if (!row) { unmatched.push(name); continue; }
   identities.set(name, { id: row.player_id, sourceName: row.player_name, profileUrl: row.url, peakMmr: number(row.peak_mmr), peakLr: number(row.peak_lr) });
 }
