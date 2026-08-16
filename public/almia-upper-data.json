@@ -4,7 +4,7 @@
     "date": "2026-08-15",
     "ladderId": 19,
     "ratingCutoff": "2026-08-15T16:01:00Z",
-    "generatedAt": "2026-08-16T20:25:32.935Z",
+    "generatedAt": "2026-08-16T20:38:15.386Z",
     "methodology": "MMR and LR are reconstructed from each player's latest RT event state at or before the fixed cutoff. Expected advancement is seeded by cutoff MMR.",
     "unmatched": []
   },
@@ -16,7 +16,7 @@
     "winner": "Cormac",
     "winnerScore": 107,
     "fieldAverageMmr": 7708,
-    "matchedPlayers": 85,
+    "matchedPlayers": 84,
     "allTimeGrandmasters": 17
   },
   "topRankCounts": [

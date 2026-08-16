@@ -81,7 +81,7 @@ test("ships the complete Almia Upper tournament analysis", async () => {
   assert.equal(data.summary.rounds, 4);
   assert.equal(data.summary.winner, "Cormac");
   assert.equal(data.summary.winnerScore, 107);
-  assert.equal(data.summary.matchedPlayers, 85);
+  assert.equal(data.summary.matchedPlayers, 84);
   assert.deepEqual(data.meta.unmatched, []);
   assert.equal(data.roomDifficulty.length, 14);
   assert.equal(data.rankDistribution.length, 11);

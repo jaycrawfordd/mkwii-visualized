@@ -65,7 +65,7 @@ export default function AlmiaUpperDashboard({ data }: { data: AlmiaUpperData | n
       <Stat label="Field Avg MMR" value={fmt(data.summary.fieldAverageMmr)} detail={`RT S${data.meta.ladderId} cutoff`} />
       <Stat label="Rooms" value={fmt(data.summary.rooms)} detail={`${data.summary.rounds} tournament rounds`} />
       <Stat label="All-Time GMs" value={fmt(data.summary.allTimeGrandmasters)} detail="among players who started" />
-      <Stat label="Rating Coverage" value={`${data.summary.matchedPlayers}/${data.summary.registeredPlayers}`} detail="registered players matched" />
+      <Stat label="Rating Coverage" value={`${data.summary.matchedPlayers}/${data.summary.competitors}`} detail="competitors matched" />
     </div>
 
     <section className="panel wide cutoff-strip"><span>Rating cutoff</span><strong>{cutoff(data.meta.ratingCutoff)}</strong><small>{data.meta.methodology}</small></section>

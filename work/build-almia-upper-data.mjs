@@ -96,6 +96,7 @@ for (const round of tournament.rounds) for (const room of round.rooms) room.resu
 });
 
 const competedNames = new Set(tournament.rounds[0].rooms.flatMap((room) => room.results.map(([name]) => name)));
+const unmatchedCompetitors = unmatched.filter((name) => competedNames.has(name));
 const players = tournament.registeredPlayers.map((name) => {
   const identity = identities.get(name);
   const snapshot = identity ? snapshots.get(identity.id) : null;
@@ -146,9 +147,9 @@ const finalPlayers = players.filter((player) => player.finalPlace).sort((a, b) =
 const sortedPlayers = [...players].sort((a, b) => Number.isFinite(a.mmr) && Number.isFinite(b.mmr) ? b.mmr - a.mmr : Number.isFinite(a.mmr) ? -1 : Number.isFinite(b.mmr) ? 1 : a.name.localeCompare(b.name));
 
 writeFileSync(outputPath, JSON.stringify({
-  meta: { name: tournament.name, date: tournament.date, ladderId, ratingCutoff: tournament.ratingCutoff, generatedAt: new Date().toISOString(), methodology: "MMR and LR are reconstructed from each player's latest RT event state at or before the fixed cutoff. Expected advancement is seeded by cutoff MMR.", unmatched },
-  summary: { registeredPlayers: tournament.registeredPlayers.length, competitors: competedNames.size, rooms: roomDifficulty.length, rounds: tournament.rounds.length, winner: finalPlayers[0]?.name || null, winnerScore: finalPlayers[0]?.finalScore || null, fieldAverageMmr: average(players.filter((player) => player.competed).map((player) => player.mmr)), matchedPlayers: players.filter((player) => Number.isFinite(player.mmr)).length, allTimeGrandmasters: grandmasters.length },
+  meta: { name: tournament.name, date: tournament.date, ladderId, ratingCutoff: tournament.ratingCutoff, generatedAt: new Date().toISOString(), methodology: "MMR and LR are reconstructed from each player's latest RT event state at or before the fixed cutoff. Expected advancement is seeded by cutoff MMR.", unmatched: unmatchedCompetitors },
+  summary: { registeredPlayers: tournament.registeredPlayers.length, competitors: competedNames.size, rooms: roomDifficulty.length, rounds: tournament.rounds.length, winner: finalPlayers[0]?.name || null, winnerScore: finalPlayers[0]?.finalScore || null, fieldAverageMmr: average(players.filter((player) => player.competed).map((player) => player.mmr)), matchedPlayers: players.filter((player) => player.competed && Number.isFinite(player.mmr)).length, allTimeGrandmasters: grandmasters.length },
   topRankCounts, roomDifficulty, rankDistribution, roundStrength, outperformers, grandmasters, finalPlayers, players: sortedPlayers,
 }, null, 2));
 console.log(`Wrote ${outputPath.pathname}`);
-if (unmatched.length) console.warn(`Unmatched tournament players: ${unmatched.join(", ")}`);
+if (unmatchedCompetitors.length) console.warn(`Unmatched tournament competitors: ${unmatchedCompetitors.join(", ")}`);
